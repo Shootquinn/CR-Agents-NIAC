@@ -1,10 +1,10 @@
 ## Chunk extraction
 Pipeline, run by the orchestrator:
-1. The orchestrator splits each of the solicitation and FAQ PDFs into page ranges of at most 7 pages.
+1. The orchestrator splits each of the solicitation, FAQ and parent NRA files into page ranges of at most 7 pages. A docs/ markdown copy splits by its `## Page` headings.
 2. One chunk extractor spawn per range reads that range with the Read tool pages parameter and writes cr_scratch/intake_chunk_<n>.md.
 3. The orchestrator concatenates the chunk files in numeric order into cr_scratch/intake_chunks.md. The merge spawn reads that one file.
 
-Input: one page range and a SOURCE LABEL (SOL or FAQ).
+Input: one page range and a SOURCE LABEL (SOL, FAQ or NRA).
 Output headings, in order:
 1. ## Files read
 2. ## Rows
@@ -15,7 +15,7 @@ Rows section, two kinds of row. Every row starts with a pipe.
 2. Requirement rows: `| R-cNN | supporting quote | label page`. Write one row for each requirement id of templates/intake_summary.md that this range supports.
 
 Row format:
-1. The label page is the printed page number of the range. Examples: `SOL p.10`, `FAQ p.8`.
+1. The label page is the printed page number of the range. Examples: `SOL p.10`, `FAQ p.8`, `NRA p.11`.
 2. A value is a quote of 15 words or fewer.
 3. Copy values from the range. Convert only dates: write dates as YYYY-MM-DD. Write times as printed.
 
@@ -42,15 +42,15 @@ Field list:
 | F12 | lines per vertical inch limit |
 | F13 | margins |
 | F14 | paper size |
-| F15 | elimination criterion 1 |
-| F16 | elimination criterion 2 |
-| F17 | elimination criterion 3 |
+| F15 | elimination criterion 1 (a listed reason a proposal is declined; the evaluation criteria list is a different list) |
+| F16 | elimination criterion 2 (same list as F15) |
+| F17 | elimination criterion 3 (same list as F15) |
 | F18 | weight Innovation |
 | F19 | weight Impact |
 | F20 | weight Mission |
 | F21 | weight Technical Approach |
 | F22 | invite threshold score |
-| F23 | AI citation rule |
+| F23 | AI citation rule (usually in the NRA; the FAQ may add to it) |
 | F24 | blackout rule |
 | F25 | submission system |
 

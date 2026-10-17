@@ -2,7 +2,7 @@
 
 The parent NASA Research Announcement. Each NIAC cycle's solicitation is an appendix to it; where the appendix says "see SpaceTech REDDI" or cites the NRA, this is the document. Page headings are PDF pages.
 
-Run solicitation intake on the current cycle documents before you write. This file is a reference copy; the current NRA, appendix, amendments and FAQ govern.
+Run solicitation intake on the current cycle documents before you write. This file is a reference copy of SpaceTech REDDI 2026; a newer NRA or amendment in NSPIRES governs.
 
 ## Page 1
 

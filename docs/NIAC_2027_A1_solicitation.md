@@ -2,7 +2,7 @@
 
 Cycle label: 2027 A1, issued 2026-09-28, Amendment 1 2026-10-15. Appendix NNH26ZTR001N-27NIAC_A1.
 
-Run solicitation intake on the current cycle documents before you write. This file is a reference copy of one past cycle; the current solicitation, amendments and FAQ govern.
+Run solicitation intake on the current cycle documents before you write. This file is a reference copy of the 2027 A1 cycle (Amendment 1 included); a newer solicitation or amendment in NSPIRES governs.
 
 ## Page 1
 

@@ -11,7 +11,7 @@
 6. Q4 State your concept in one paragraph. Longer notes from the user: save them as `cr_scratch/concept_notes.md` (2,500 words at most; the Writer reads them).
 7. Q5 What model name does the /model command show? Copy it exactly.
 8. Q6 Does the proposer have a UEI in SAM.gov? Answer yes or no.
-9. Split each PDF into page ranges of at most 7 pages. Spawn one chunk extractor per range (catalog "Intake chunk extractor"). Concatenate the chunk files in numeric order into `cr_scratch/intake_chunks.md`.
+9. Sources are the Q1 to Q3 files plus the parent NRA the solicitation names. docs/ holds 2027 A1 copies (solicitation, FAQ, SpaceTech REDDI 2026 NRA); offer them when the user has no newer NSPIRES files. Split each source into page ranges of at most 7 pages. Spawn one chunk extractor per range (catalog "Intake chunk extractor"). Concatenate the chunk files in numeric order into `cr_scratch/intake_chunks.md`.
 10. Run the date command and paste its output. Spawn the merge (catalog "Intake merge") with that date as DATE STRING.
 11. Read the merged file's "## Status" and "## Early warning" only. Status CLOSED: tell the author the Step A deadline has passed. Early warning not "none": copy that line into the P1 gate file.
 
