@@ -1,0 +1,128 @@
+# CLOVER: Capillary Low-Gravity Groundcover
+
+## Overview Chart Summary
+
+### Innovation
+- Use white clover as an Atmospheric Water Harvesting (AWH) groundcover for low-gravity agriculture applications
+- Enhance natural features found in some varieties/cultivars of clover to transport water harvested from the air directly to the soil for the benefit of main crops and fruit trees
+- Capillary forces are stronger in low-g, leveraging clover's natural water-collecting strengths
+- "Engineered fog" can synergize with groundcover, boosting yields in low-g
+- Current focus is on biomimicry, not developing AWH plants and crops
+
+### Impact
+- Enable large-scale low-infrastructure agriculture in sealed lava tubes and large-scale habitats on the Moon and Mars
+- Enhance the strength of engineered ecosystems off-Earth
+- Reduce water use by capturing transpiration & return to soil
+- Potential for Earth greenhouse / arid climate applications
+- Inspire students with biology, dew, fog, humidity, agriculture
+- Potential applications in vertical farming
+- Move the state of art from biomimicry to bio-engineered AWH & transport
+- This concept is an extension impact of 80NSSC23K0591, TitanAir, NIAC Ph. I
+
+### Mission
+- Large-scale agriculture development in the Marius Hills lunar lava tubes
+- Provide water to soil on walls / ceiling
+- Passive watering / fertilizing approach
+- Clover could play a key role in "finishing" ISRU-created soils, following mycelium and bacteria soil-creation phases
+- Once primary agriculture begins, clover can be mowed annually by robots during the crop planting process
+- Eliminate robotic watering and large-scale irrigation requirements; reduce fertilizer demand w/nitrogen fixing
+- Leverage smaller numbers of robots to support more fields
+
+### Approach
+- Optimize clover leaf and stem geometry
+- Identify key clover traits which must be modified to match the optimized shape
+- Create a design matrix for: the presence of the required traits and the corresponding variety, cultivar, species, etc.
+- Note the deviation of each trait from the optimized shape
+- Develop a strategy to optimize traits; match the geometry
+- Estimate the number of generations required for cultivation
+- Evaluate feasibility of "engineered fog;" describe properties
+- Develop a strategy for the Marius Hills lava tube context
+- Evaluate competing approaches and note key challenges
+
+---
+
+## Technical Section
+
+Agriculture is one of the largest challenges facing next-decade human lunar settlements. The type of crop mix selected, and the cultivation methods, are primary drivers of water and energy needs, as well as sustainability (Sakurai, 2021). Novel concepts such as those outlined by Shevtsov (2022), Rothschild (2021), MacDonald (2020) and Arkin (2017) show a path for creating large-scale arable land in extraterrestrial environments by creating living soils. However, there are few options for managing these vast tracts of real estate without massive infrastructure. One method which could dramatically reduce infrastructure requirements is a humidity-harvesting groundcover which routes the collected water to the soil via capillary features.
+
+[In this paper, traits of clover which will be critical to our atmospheric water harvesting (AWH) context are bolded; important AWH traits underlined; and horticulture considerations italicized] Clover plays an important role in agriculture, largely due to its *ability to fix nitrogen* (No-Till, 2022). It also stays *low to the ground, is easy to seed, tolerates mowing* (Cotswold, n.d.), helps to *keep soil in place* (Malik, 2000; No-Till, 2022), and *doesn't aggressively compete with crops for resources* (White, 1991; Hill, 2021; Cougnon, 2022). Clover has natural AWH features, like trichomes and nanocoated surfaces which entice water to flow directionally (Mohd, 2022; 2023). Many species of clover also have **C-shaped petioles** (stem between the stipule and leaf; Zoric, 2012), including a white clover variety found in the Principal Investigator's yard (Figs. 1&2). **Leaflets also have curvature**, occasionally exhibiting an observed **capillary gradient geometry** which could move water to the petiole using capillary action. Fig. 3 shows a notionally-optimized leaflet geometry above a no-drip capillary pour spout (Morley, 2020; also see concept art). These traits can potentially be leveraged to transport water directly to the soil to benefit crops.
+
+The capillary-driven flow of water on Earth is limited to a width of about 2.7 mm (Dreyer, 2007, eq. 12-15, p. 10). This increases to ~6.6 mm in a lunar context. This expanded capillary flow regime could enable a bioengineered clover to transport water from the atmosphere to the soil (perhaps even "ceiling soil"), which could reduce the need for complex irrigation systems and human intervention. Trichomes - tiny hairs on the plant surface - play a vital role in AWH (Mohd, 2022). Their placement & functionality may require careful optimization and will be investigated.
+
+Clover is a highly-evolved plant species with specific valuable traits, many of which benefit other plants and animals. However, our desire is to use it as a mechanical device for harvesting water from the air while retaining key traits that make it friendly and valuable. It may be possible that this fusion of natural mechanisms and engineering presents a path towards sustainable, large-scale, low-infrastructure agriculture in low-gravity environments.
+
+We propose to evaluate the feasibility of a bioengineering effort focused on optimizing the traits of *Trifolium repens* (white clover) for AWH in the service of other crops. This species is especially well known as a low-competition, low-lying groundcover with several varieties which may take well to serving as a mechanical AWH system, yet could act as a pivotal element in a thriving, crop-producing ecosystem. If feasible, this engineered clover could revolutionize passive crop watering and treatment, paving the way for expansive subterranean lunar agriculture and enhancing the prospects of human space habitation.
+
+### Identified Traits
+
+Identified traits include: **invagination (C-shape) of petiole cross-section**; **leaflet curvature** (has capillary gradient); **petiolule accommodates leaflet drainage to petiole**; trichome properties on upper / lower leaf surfaces, petiolule, and stipule; surface properties of upper / lower leaf surface, petiole, stipule, and stem. Each trait will be carefully considered as a target for optimization.
+
+Investigators will note the difference between the optimized geometry and the current (natural) shape of *Trifolium repens*, and any trait occurrence in other species, varieties, or cultivars that could be helpful for creating a hybrid Trifolium. If the concept is shown feasible, a breeding and hybridization plan for enhancing *Trifolium repens* will be developed. If genetic engineering is also required, investigators will note the justification and outline a combined strategy.
+
+### Engineered Fog
+
+Engineered fog is an important consideration. This could allow us to tweak the properties of water, potentially reducing the scale of the changes required to key traits of clover, reducing the up-front costs for creating a lunar clover variety. This may have another potential benefit: fertilizing crops with fog; this will be investigated. The concentration of any solutions which may be aerosolized are likely to fluctuate throughout the day, and so will the humidity in the habitat. This may have an unknown effect on the susceptibility of crops to disease, and will be investigated.
+
+### Mission Context
+
+Mission context is a lunar colony inside a Marius Hills lava tube, sized for 100 people. The food self-sufficiency target for this study is 92%, taken directly from the excellent work of Sakurai; with a crop mix of cucumber, tomato, lettuce, strawberry, potato, sweet potato, soybean, and rice (2021). CLOVER can potentially support all of these crops, except rice. Research is needed to adapt dryland rice farming to a lunar setting (not proposed here); large water requirements exist at key times for reasonable yields (50% of paddy yields; Thomet, 2016). For this reason, hydroponics seems to be the smart choice for rice production off-planet. Notably, a hydroponics laboratory or habitat module could be the source of the air conditioner / fogging device which can be used to control the humidity in the larger field. Soil can potentially be created from regolith using fungus, bacteria, & polymers (Shevtsov, 2022; Rothschild, 2021; MacDonald, 2020; & Arkin, 2017). Clover is a logical part of a "first planting mix" to finish such a soil prior to agriculture beginning.
+
+### Impact
+
+CLOVER's potential extends beyond lunar contexts, potentially including agricultural approaches for Mars (4.4 mm capillary flows) and large zero-g agriculture habitat modules (flows > 1 m). This could bring efficient water utilization, infrastructure reduction, and enhanced engineered ecosystems to these key locations, potentially enabling longer, more sustainable missions. On Earth, AWH progress has almost exclusively been in the form of mimicking nature (Liu, 2022). CLOVER could play a key role in large greenhouses, vertical farming, and as an agricultural AWH method for arid climates. As climate patterns shift, biomimicry AWH may be crucial for supplying water to remote communities in arid regions (Liu, 2022). CLOVER could reduce crop irrigation needs, freeing up the water from biomimicry AWH for use by people. This could open up new, low-investment arable land, potentially transforming arid regions into thriving ecosystems. Such impacts could reshape societal views on space tech in the climate change era.
+
+### Challenges
+
+Identifying potential hurdles, such as changing clover's shape through artificial selection to optimize it for AWH, is a cornerstone of the project. Challenges will be thoroughly evaluated. Potential challenges include: a reliance on supporting technologies, like mycoculture to create soil from regolith; ensuring clover can survive and function in the subterranean lunar environment; managing potential ecological impacts, or interactions with habitat systems; and regulatory or biosecurity issues related to the use of genetically modified organisms on the moon.
+
+### Competing Approaches
+
+These include gardening robots (both ground-based and Unmanned Aerial Vehicles), permanent watering infrastructure (i.e., sprinklers and drip lines), hydroponics, and manual watering. By comparing and contrasting CLOVER with established methods, and new competing methods that may be on the horizon, we will identify areas for improvement, integration, and perhaps, find unexpected synergies.
+
+### Work Plan
+
+- **Shape optimization (30%):** Optimize leaf and stem geometry, leveraging the analytical tools and experimental techniques developed during the TitanAir Ph. I study (80NSSC23K0591).
+- **Bioengineering considerations (20%):** Identify traits which tend towards optimized geometry. Create design matrix for presence of required traits and corresponding variety, cultivar, or species. Note deviation of each trait from optimal. Describe engineering effort to combine & enhance identified traits. Estimate the number of generations required for cultivation.
+- **Engineered fog (10%):** Evaluate feasibility of engineered fog, optimize liquid properties if feasible.
+- **Competing approaches (10%):** A comparative evaluation of competing approaches will be conducted early in the investigation. Approaches will be carefully compared and contrasted.
+- **Mission context (30%):** Describe our visionary approach to developing agriculture in the Marius Hills lunar lava tubes. Evaluate soil, regolith, *habitat, and lighting* topics. By creating a passive irrigation system centered around white clover and engineered fog, we aim to establish a sustainable and efficient agricultural system in the challenging subterranean lunar environment. By combining a plausible method for food production with an innovative way to manage water resources, we hope to create an era of holistic lunar ecosystems which promise high-impact sustainability and scalability to keep humankind on the moon for generations to come.
+
+---
+
+## References
+
+Arkin, A. P. (2017). *A Synthetic Biology Architecture to Detoxify and Enrich Mars Soil for Agriculture*. https://www.nasa.gov/directorates/spacetech/niac/2017_Phase_I_Phase_II/Mars_Soil_Agriculture/
+
+Cotswold Seeds. (n.d.). *Wild White Clover (small leaved)*. https://cotswoldseeds.com/species/76/wild-white-clover-small-leaved
+
+Cougnon, M., Durand, J.-L., Julier, B., Barre, P., & Litrico, I. (2022). Using perennial plant varieties for use as living mulch for winter cereals: A review. *Agronomy for Sustainable Development* volume 42, Article number: 110. doi:10.1007/s13593-022-00844-x
+
+Dreyer, M. (2007). *Free surface flows under compensated gravity conditions*. Berlin, NY: Springer.
+
+Hill, N. S., Levi, M., Basinger, N., et al. (2021). White clover living mulch enhances soil health vs. annual cover crops. *Agronomy Journal*, 133(4), 3697-3707. https://doi.org/10.1002/agj2.20768
+
+Liu, X., Beysens, D. and Bourouina, T. (2022). *ACS Materials Letters* 4(5), 1003-1024. doi:10.1021/acsmaterialslett.1c00850
+
+MacDonald, J. G., Rodriguez, K., & Quirk, S. (2020). An Oxygen Delivery Polymer Enhances Seed Germination in a Martian-like Environment. *Astrobiology*, 20(7). doi:10.1089/ast.2019.2056
+
+Malik, R. K., Green, T. H., Brown, G. F., & Mays, D. (2000). Use of cover crops in short rotation hardwood plantations to control erosion. *Biomass and Bioenergy*, 18(6), 479-487. doi:10.1016/S0961-9534(00)00016-7
+
+Mohd, G., Majid, K., & Lone, S. (2022). Multiscale Janus Surface Structure of Trifolium Leaf with Atmospheric Water Harvesting and Dual Wettability Features. *ACS Applied Materials & Interfaces*, 14(3), 4690-4698. doi:10.1021/acsami.1c20463
+
+Mohd, G., Majid, K., & Lone, S. (2023). Synergetic Role of Nano-/Microscale Structures of the Trifolium Leaf Surface for Self-Cleaning Properties. *Langmuir*, 39(17), 6178-6187. doi:10.1021/acs.langmuir.3c00317
+
+Morley, Q. (2020). Costco Milk Jug Pour Spout (unlisted video, must use URL). *YouTube.com*. https://www.youtube.com/watch?v=mxmqUNzLSb4
+
+No-Till Farmer. (2022). *Could Clover be 'Holy Grail' of Arable Farming?* https://www.no-tillfarmer.com/articles/10647-could-clover-be-holy-grail-of-arable-farming
+
+Rothschild, L. J. (2021). *Mycotecture Off Planet*. https://www.nasa.gov/directorates/spacetech/niac/2021_Phase_I/Mycotecture_Off_Planet/
+
+Sakurai, M., Shima, A., Kawano, I., Haruyama, J., & Miyajima, H. (2021). A Guideline for a Sustainable Lunar Base Design for Construction in Lunar Lava Tubes and Their Vertical Skylights. https://hdl.handle.net/2346/87147.
+
+Shevtsov, J. (2022). *Making Soil for Space Habitats by Seeding Asteroids with Fungi*. https://www.nasa.gov/directorates/spacetech/niac/2021_Phase_I/Making_Soil_for_Space_Habitats/
+
+Thomet, H. (2016). *Exploring dryland rice production in the mid-Atlantic (FNE15-832)*. https://projects.sare.org/project-reports/fne15-832/.
+
+White, J. G., & Scott, T. W. (1991). Effects of perennial forage-legume living mulches on no-till winter wheat and rye. *Field Crops Research*, 28(1-2). doi:10.1016/0378-4290(91)90079-B.
+
+Zoric, L., Merkulov, L., Lukovic, J., & Boza, P. (2012). Comparative analysis of qualitative anatomical characters of Trifolium L. (Fabaceae) and their taxonomic implications: preliminary results. *Plant Systematics and Evolution*, 298(1), 205-219. doi:10.1007/s00606-011-0545-2

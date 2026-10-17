@@ -1,0 +1,71 @@
+# NIAC Phase I Step A proposal repo
+
+This is not a NASA site. This is not a NASA product. It has nothing to do with NASA at all. NASA did not write these words, review them, or bless them. Everything here is merely advisory in nature, which is lawyer for "take it or leave it, friend." The current NASA solicitation in NSPIRES governs. Read it, follow it, and ignore us wherever it disagrees.
+
+## What this repo does
+
+It helps you write one thing: the 3-page NIAC Phase I Step A proposal. The output is three parts: an overview chart, a 3-page body, and references. It does not write Step B. It does not write your idea for you. Bring a concept, or ask for orientation and it will help you find one.
+
+## Quick start
+
+1. Clone this repo.
+2. Open Claude Code in the folder.
+3. Claude reads CLAUDE.md on its own. Do not paste anything.
+4. Answer the six intake questions.
+5. No concept yet? Say so. Orientation is offered.
+
+## How it runs
+
+Every agent runs as Haiku, including the orchestrator, so the method files read like a checklist.
+
+Haiku cannot read figure details reliably. Bar heights, plotted points and small print in chart images are marked NOT-READ, and any claim that leans on them is marked [FIGURE UNVERIFIED]. Opus figure analysis is default off and runs only when you authorize it, per method/opus_figure_rule.md.
+
+## Who is in charge
+
+The NASA solicitation governs over this repo and over the blog advice.
+
+## AI use must be cited
+
+NASA wants AI use cited (NRA p.11-12, FAQ Q45). The repo logs it in cr_scratch/ai_log.md as you go, so the citation is ready when you are.
+
+## Requirements
+
+1. Python 3.
+2. `pip install -r scripts/requirements.txt`
+3. LibreOffice, for PDF output.
+
+## Sample work order
+
+`Example Workorder.txt` in the root is a sample work order. Look at it to see what a finished request looks like.
+
+## What is in docs/
+
+1. Example proposals.
+2. The 2027 solicitation in markdown, labeled 2027 A1.
+3. The overview chart template.
+
+## Folder map
+
+1. `CLAUDE.md`: the orchestrator's entry point. Do not edit.
+2. `method/`: the guide, personas, spawn files, tests method, pull protocol.
+3. `prompts/`: intake, sources, orientation and the three method prompts.
+4. `scripts/`: format and tool checks, the editor grep, the chart and docx builders, PDF assembly.
+5. `skills/`: the overview chart skill.
+6. `supplements/`: the proposal arc, NIAC advice, mission checklist, figure guidance, style subset and grep list.
+7. `templates/`: the intake summary, briefs, logs, accumulator and the proposal template docx.
+8. `tests/seed/`: the 60 seed tests, scoring protocol and rubric.
+9. `docs/`: the 2027 solicitation in markdown, the chart template, three example proposals.
+10. `sources/`: drop your solicitation, FAQ and source papers here.
+11. `cr_scratch/`: working notes and logs, created during a run.
+12. `PROVENANCE.md`: where each derived file came from.
+
+## Big brothers
+
+1. Original: https://github.com/Shootquinn/CR-Agents (general method and docx bundle).
+2. Legal: https://github.com/Shootquinn/CR-Agents-Legal (contract work). The legal variant is beta.
+
+Nothing ships from the legal repo. See method/pull_protocol.md.
+
+## License
+
+The Unlicense (public domain), except the NASA files and example proposals that LICENSE lists. Your proposal is still your problem to solve.

@@ -1,0 +1,8 @@
+# Accumulator: [Proposal Name]
+## Cycle [n]
+- Manager: [verdict line]
+- Software Engineer: [verdict line]
+- Writer: [verdict line]
+- Editor: [verdict line]
+- Fact-Checker: [verdict line]
+- Designer: [verdict line]

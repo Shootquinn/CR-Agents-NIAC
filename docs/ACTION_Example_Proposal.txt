@@ -1,0 +1,122 @@
+# ACTION: Advanced Capture and Transport Integrated deOrbiting Nanosat
+
+## Overview Chart Summary
+
+### Innovation
+- Intercept and deorbit debris in LEO from 5 cm to 30 cm in size
+- Provides a path for Active Debris Removal (ADR) to protect existing space assets as recommended by NASA IG-21-011
+- Novel Capture, Containment, De-spin and Drag (CCDD) module:
+  - 5x deployed / stowed diameter ratio (40 cm / 8 cm)
+  - 48x deployed / stowed surface area ratio (high drag)
+  - 3x modules fit in a 2 L volume
+  - 20 m reinforced drag tether
+  - Electromagnetic and aero drag
+  - Tether counterweight removes dynamic motion from debris
+- 3x CCDDs and 3x Thruster-Deorbit Kits (TDKs) integrate into a 6U CubeSat
+
+### Potential & Benefits
+- Remediation of multiple size regimes:
+  - 5 cm: numerous & dangerous
+  - 10 cm - 30 cm: higher mass and higher fragmentation risk
+- Scalable solution is economical; doesn't require dedicated launches
+- Order of magnitude cost/kg advantage over 1-ton ADR concepts:
+  - Break-even: ~0.5 kg debris; 10x lower cost: ~3.4 kg debris
+- Can be deployed / maintained strategically (including International Space Station)
+- Potential regulatory advantages: meet end of life requirements; provides low-cost path for 'bring 1 up, bring 2 down' rule, etc.
+- Potential for wider community benefit from CCDD folding strategy
+
+### Technical Approach
+- Evaluate concept feasibility
+- Evaluate challenges related to the CCDD module folding / closure
+- Assess other aerospace applications of CCDD technology
+- Evaluate optimal target debris to maximize potential benefits
+- Evaluate small thruster integration options for CCDDs and TDKs
+- Assess orbit change requirements for dispersing multiple units
+
+---
+
+## Technical Section
+
+The threat posed by orbital debris has been a growing concern in the space community for over forty years. Consensus within NASA and the European Space Agency (ESA) is that debris remediation via Active Debris Removal (ADR) should start immediately (ESA, n.d.; Liou, 2011, p. 61). According to Liou & Johnson of the NASA Orbital Debris Program Office, "Without environment remediation and the wide implementation of existing orbital debris mitigation policies and guidelines, the risks to space system operations in near-Earth orbits will continue to climb" (2006, p. 2). A recent NASA Inspector General investigation found that unfortunately there are no ADR technologies ready to take on this challenge (NASA, 2021, p. 4). ESA plans to remove a 100 kg payload adapter from Low Earth Orbit (LEO) during the world's first ADR mission, Clearspace-1, at a cost of $120 million (2020). The cost of doing nothing is the largest cost of all, potentially leading to exponential growth of smaller debris and limiting access to LEO (Kessler, 1978). Liou & Johnson reiterated Kessler's warning again in 2006, stating "the current debris population in the LEO region has reached the point where the environment is unstable and collisions will become the most dominant debris-generating mechanism in the future."
+
+The proposed mission concept targets the smallest trackable class of debris to enable deorbit of high-collision-probability debris objects. Removal of this type of debris can reduce collision risk for existing spacecraft already in orbit, as well as remediate the environment to protect long-term sustainability. We focus on debris on the order of 10 cm, with the size envelope ranging from the lower tracking limit of 5 cm up to 30 cm (NASA, n.d.-b., para. 6). To enable this mission concept, we propose a 6U CubeSat capable of removing three debris objects per mission from LEO, called Advanced Capture and Transport Integrated deOrbiting Nanosat (ACTION). The design is flexible, cheap, and scalable. Launch costs for nanosats are far less than for dedicated large ADR missions, which gives ACTION an order of magnitude cost advantage.
+
+### Cost Comparison
+
+| | Clearspace ADR 5/yr 100 kg | 1-ton ADR 5/yr 1000 kg | ACTION 50/yr 3.3 kg | ACTION 500/yr 3.3 kg |
+|---|---|---|---|---|
+| **Cost (USD '000)** | 800,000 | 1,500,000 | 25,000 | 150,000 |
+| **Removed kg** | 500 | 5,000 | 500 | 5,000 |
+| **(USD '000) / kg** | 1,600 | 300 | 50 | 30 |
+
+### System Architecture
+
+Each ACTION unit contains three Capture, Containment, De-spin and Drag (CCDD) modules and three small Thruster-Deorbiting Kits (TDKs). The CCDD module expands after being deployed and uses a drawstring closure to contain debris. A 20-meter electromagnetic tether is then deployed, along with a counterweight (the "yoyo") in order to stabilize spinning debris after capture by transferring angular momentum to the yoyo as the tether deploys.
+
+### CCDD Module Innovation
+
+This novel approach leverages key innovations in stowage, deployment, and deorbiting strategy that have the potential to enable low cost and effective active removal of mission-threatening debris for the first time. The CCDD module stows with 1/5 of its deployed diameter and a 35x reduction in surface area (over 48x when counting the area of the deployed tether), enabling three of the modules to be stowed and deployed from a volume of 2 L. Folding is accomplished by first collapsing the structure, and then folding the frame into 5 overlapping loops. A mathematical analysis of this folding technique is provided in Mouthuy, et. al., 2012. Our team has concluded that this technique has never been applied to use in space. The CCDD module structure consists of two or three frame pieces, a spring-like frame piece, and a carbon-Kevlar-reinforced mylar "bag" wrapper that acts as a tensioned skin once deployed. Methods to increase bag robustness will be evaluated. The CCDD folding process will need to be carefully developed, and should accommodate integration considerations like umbilicals and filling ports.
+
+### Autonomous Operations
+
+After deployment, the CCDD module is stabilized by a basic Reaction Control System (RCS) and targets the debris using LIDAR sensing or a computer vision system. The targeting computations for autonomous debris capture take place inside the ACTION unit using sensors mounted inside the deployed CCDD module. The CCDD module should be designed such that the electronics package is only required for stabilization (immediately after deployment) and initializing the rendezvous maneuver, in case the interaction with the debris is violent. As such, the drawstring closure and tether deployment should be activated by a simple analog circuit or mechanical device that is armed before the encounter with the debris object; detecting the encounter via an impact sensor, vibration sensor, or other reliable analog mechanism.
+
+After containment of the debris object, a TDK can be deployed and maneuver to the end of the tether, docking to the yoyo using an electromagnet on the front of the TDK to attract the yoyo. The TDK rendezvous process is also coordinated autonomously by the ACTION unit, but the TDK should have a more robust electronics package than the CCDD, capable of surviving for extended periods. The yoyo has a steel or permanent magnet component which is attracted to the TDK on approach by the electromagnet, and a faceplate is used to assist the capture and encloses a locking mechanism to secure it. Magnetic capture was recommended to the FCC by Global NewSpace Operators as a reliable form of capture (2019, p. 15).
+
+### Deorbiting Strategy
+
+Deorbiting is primarily accomplished using the tether, by producing electromagnetic and aerodynamic drag (Hoyt et. al., 2010). The TDK can be used to initiate a transfer orbit, circularize the orbit, or to simply standby for commands from the ground to prevent collisions and shepherd the CCDD during deorbit. Once below 350 km, the TDK can use any remaining propellant to reduce perigee prior to letting atmospheric drag conclude deorbiting. Any debris that will fit in the CCDD can be deorbited using this strategy from any LEO altitude.
+
+One strategy to ensure the proper orientation of the thrust vector for Delta-V burns is outlined in Trushlyakov & Yudintsev: The CCDD-Tether-TDK system would be rotated about the center of mass to keep tension on the tether. When thrust is needed the TDK will fire in short bursts when its thrust vector aligns with the desired vector, for a brief period during each rotation (2019). Alternate methods will be examined. Strategies will be examined to ensure that the ACTION unit itself and the onboard equipment do not create additional long-lived debris objects.
+
+### Compliance and Impact
+
+It has been noted in Orbital Debris Quarterly News that compliance to deorbit guidelines is more important than the guideline itself: there is little difference between the 5-year and 25-year time-to-deorbit rules when it comes to future debris predictions. However, the important thing is that deorbiting does occur: "future debris growth in LEO is more sensitive to the level of compliance than to the difference between the 25-year and the 5-year rules." (NASA, 2020, p. 5). The use of ACTION units in LEO can retroactively enforce this compliance on assets up to 30 cm in size, with the potential to prevent future debris creation by removing non-compliant spacecraft before they collide or fragment.
+
+ESA also recommends evaluating multiple-target ADR missions: "The concentration of critical-size objects in these narrow orbital bands could allow multi-target removal missions" (n.d., "Polar Hotspots" section).
+
+Our analysis shows that the ACTION concept has the potential to revolutionize the way we think about orbital debris remediation, enabling a low-cost path to a sustainable space environment. This study will evaluate the feasibility of the concept as a whole, and the novel technology described for the CCDD module. Careful attention will be paid to benefits of the folding design, which may enable other types of ADR missions and may have dozens of other space applications.
+
+---
+
+## References
+
+ESA, (n.d.). "Active Debris Removal," ESA Safety & Security, Space Debris. https://www.esa.int/Safety_Security/Space_Debris/Active_debris_removal
+
+ESA, (2020, December). "ESA commissions world's first space-debris removal service." ADRIOS/ClearSpace-1 Contract Award FAQ. https://download.esa.int/esoc/downloads/esa_ADRIOS-CS-1_FAQ_25112020_2.pdf
+
+Federal Communications Commission (FCC), (2019, April 5). Comments of Global NewSpace Operators. Federal Communications Commission IB Docket 18-313, Washington, D.C. https://ecfsapi.fcc.gov/file/1040578949828/Global NewSpace Operators_FCC_NPRM.pdf
+
+Hoyt, R., James, K., Slostad, J., & Moser, T. (2014). WRANGLER: Capture and De-Spin of Asteroids and Space Debris. NASA. May, 30. https://www.nasa.gov/sites/default/files/atoms/files/2014_phase_i_robert_hoyt_wrangler.pdf
+
+Hoyt, R., Slostad, J., Barnes, I., Voronka, N., & Lewis, M. (2010). Cost-effective end-of-mission disposal of LEO microsatellites: The Terminator Tape. https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1244&context=smallsat
+
+Kessler, D. J., & Cour-Palais, B. G. (1978). Collision frequency of artificial satellites: The creation of a debris belt. Journal of Geophysical Research: Space Physics, 83(A6), 2637-2646. https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/JA083iA06p02637
+
+Liou, J. C. (2011, June). Orbital debris and future environment remediation. OCT Technical Seminar, Washington, DC. https://ntrs.nasa.gov/api/citations/20110023656/downloads/20110023656.pdf
+
+Liou, J. C. & Johnson, N. L. (2006). Risks in space from orbiting debris. Science. New York, NY., 311(5759), 340. https://orbitaldebris.jsc.nasa.gov/library/sciencemag-risks-in-space-from-orbiting.pdf
+
+Mohamed, T., Hassanein A.E., El Fiky, A.H., Alsbou Y. (2019, March 22). Analyzing Space Debris Flux and Predicting Satellites Collision Probability in LEO Orbits Based on Petri Nets. doi:10.1109/ACCESS.2019.2922835
+
+Mouthuy, P-O. et al. (2012). Overcurvature describes the buckling and folding of rings from curved origami to foldable tents. Nature Communications 3:1290 doi: 10.1038/ncomms2311
+
+NASA, (1995). Guidelines and assessment procedures for limiting orbital debris. NASA Safety Standard 1740.14. https://transition.fcc.gov/ib/sd/ssr/docs/1740_14.pdf
+
+NASA (2021, January 27). "NASA's Efforts to Mitigate the Risks Posed by Orbital Debris." Nasa Inspector General Report No. IG-21-011. https://oig.nasa.gov/docs/IG-21-011.pdf
+
+NASA Orbital Debris Program Office, (n.d.-a). "Debris Remediation." NASA Astromaterials Research & Exploration Science. https://orbitaldebris.jsc.nasa.gov/remediation/
+
+NASA Orbital Debris Program Office, (n.d.-b). "Photo Gallery." NASA Astromaterials Research & Exploration Science. https://www.orbitaldebris.jsc.nasa.gov/photo-gallery.html
+
+NASA Orbital Debris Program Office, (2020, Feb.). Orbital Debris Quarterly News Volume 24, Issue 1. https://orbitaldebris.jsc.nasa.gov/quarterly-news/pdfs/odqnv24i1.pdf
+
+Sercel, J. (2016). Asteroid provided in-situ supplies (APIS). NIAC Phase I Final Report. https://www.nasa.gov/sites/default/files/atoms/files/niac_sercel_phase_i_final_report_tagged.pdf
+
+Tate, Karl. (2013, April 10). "How to Catch an Asteroid: NASA Mission Explained." Space.com. https://www.space.com/20610-nasa-asteroid-capture-mission-infographic.html
+
+Toshiya Hanada, Paula H. Krisko, (2009). Benefits and risks of using electrodynamic tethers to de-orbit spacecraft, Acta Astronautica, Volume 64, Issues 5-6, 2009, Pages 571-588, ISSN 0094-5765, https://doi.org/10.1016/j.actaastro.2008.10.007
+
+Trushlyakov, V., & Yudintsev, V. (2019). Method of Active Debris Removal Using Rotating Space Tether System. LPI Contributions, 2109:6167. https://www.hou.usra.edu/meetings/orbitaldebris2019/orbital2019paper/pdf/6167.pdf
+
+UK Sailmakers, (n.d.). "Tape-Drive Racing Mainsail." https://www.uksailmakers.ca/sails-overview-racing/tape-drive-racing-mainsail

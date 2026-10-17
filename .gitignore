@@ -1,0 +1,14 @@
+# user work products (never commit a proposal in progress)
+/cr_scratch/
+/figures/
+sources/*
+!sources/.gitkeep
+/gameplan.md
+/accumulator.md
+*.pdf
+# python
+__pycache__/
+*.pyc
+# office lock files
+~$*
+.~lock.*

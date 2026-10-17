@@ -1,0 +1,61 @@
+TitanAir: Leading-Edge Liquid Collection to Enable Cutting-Edge Science
+
+	In the wake of Cassini-Huygens, many unknown questions about the complex – and possibly prebiotic (Sagan, 1979; Waite, 2007; Raulin, 2012) – chemistry of Titan’s atmosphere and lakes remain unanswered (Nixon, 2018). Some of these open questions provide a compelling case for the existence of weird life in the Titan atmosphere or on the surface (McKay, 2005; Strobel, 2010). A low-cost flying boat mission, with a focus on atmospheric and lacustrine science, could target specific important questions that remain untargeted by any currently funded or planned Titan mission (National Academies, 2022, 2-68, Q6.3d, Q6.4, Q6.6, Q10.4b; Barnes, 2021). Such a craft could serve as a relocatable lake lander (hereafter, “laker,” after the ships of America’s Great Lakes), with an airborne duty cycle target of around 25%, enabling daily hour-order flights. We aim to unlock access to this cutting-edge science with a flying laker.
+
+We describe in this paper an integrated, fluidics approach to aerial atmospheric science. Condensation of methane and suspended complex organics can potentially be ingested through a porous or permeable aircraft leading edge, and coalesced via passive capillary features before delivery to the science payload as a continuous fluid stream (see Figs. 2 & 5 for approaches to this). The operational change from aircraft to laker should be natural, allowing atmospheric and lacustrine science operations to complement each other. It may be possible to transition in a seamless manner between the wing-mounted system and inlet ports beneath the waterline. Continuous analysis techniques from the biomedical and environmental industries could be leveraged (Bolze, 2019; Droujko, 2021). 
+
+ To further expand in-situ science opportunities, shoreline materials could be sampled from a wingtip-mounted device similar to DrACO on Dragonfly (Zacny, 2020). This can unlock access to hard-to-reach evidence of the mystical hydrological cycle of methane on Titan (Nixon, 2018, sect. 3.5, para. 5). The primary goal of this study is to explore passive fluidic atmospheric sampling from the leading edge of an airplane. Shoreline sampling is a substantial bonus.
+
+	The mechanics of liquid collection via a permeable (or perforated) leading edge are driven by capillary action. It may be possible to amplify the ingestion rate using an active or passive negative pressure in the wing. Once inboard, liquid is collected in capillary features and coalesced further by a spanwise collection rod, which mimics the collection methods employed by cacti (Ju, 2012). An experiment to demonstrate this system at a small scale in microgravity is in preliminary design stages. Figs. 3 & 4 show an early scale model test of the capillary collection and coalescence system. In the figures, the ingestion perforations and the collection rod taper are neglected. An option for coalescence and transport could be an array of V-groove channels each featuring a variable capillary gradient (Fig. 5). A third option is promising: by leveraging the strong capillary force between a flexible membrane and rigid structure (Cambau, 2011), an inflatable wing skin liner could be used. This could offer resiliency and mitigate sludge buildup problems.
+
+	For the spanwise collection rod approach, the rod can span the width of each “bay” in the wing, between structural members like ribs (i.e., Figure 2 would encompass one such bay). At each intersection with a rib, the collection rod can feed suction ports that can drain the capillary collection system (Figs. 6 & 7; also, the paper towel in Figs. 3 & 4). The liquid (and any suspended material) can then be routed to an instrument suite and in-situ resource utilization (ISRU) experiments inside the fuselage. The leading edge of a traditional airplane wing structure has ample room for such a system. Redundant suction ports and tubes could prevent clogging with tholins. A potential configuration of triple-redundant suction ports is shown in Figure 6 (red is primary, green is secondary, blue is tertiary). The rod is a versatile collection and storage device, transporting both large and small quantities of liquid, with extra reservoir area to act as an overflow to prevent flooding into the wing bay. Complete draining is possible as long as the primary or secondary suction ports are functional. Tertiary port effectiveness would need to be shown via simulation or low-gravity experimentation. 
+
+Titan airplane concepts have been produced before (Barnes, et al. 2012; Zhong, 2018; surprisingly, no examples of flying boats; Lorenz, 2009), however, very little consideration has been given to the buildup of organic material on aircraft surfaces, or the role that condensed solvents like methane would play in “cleaning” these surfaces. The effect of icing on Titan aircraft has also been neglected to a large extent, with mere references in the literature to effective ceilings due to the potential for icing (Lorenz, 2002). With the extreme cold surface temperatures (89 – 93 K; Lorenz, 2002), and unconstrained organic composition of raining haze material (Waite, 2007), thick soupy buildup and potentially icy buildup is a possibility. Depending on the altitude, region, and season, methane washing events (or even constant methane condensation) on aircraft surfaces are likely. Active skin temperature control may be able to change condensation rates. These factors will be considered during this study because they are critical to the operation of the fluid system.
+
+ The sludgy nature of tholins increases the potential for clogging the leading-edge skin or the fluid system. The best mitigation measure is larger pore sizes than are seen in terrestrial leading-edge airflow devices (Hemmen, 2018). Tholin aerosols are generally nanometer-order in size; however, the size of clumps that are allowed to interact in a cryogenic methane suspension are poorly understood (as is tholin solubility in general; McKay, 2005; McKay, 2016). This may be manageable in the timescales of the aerial duty cycle (hour-order). Buildup on the exterior of the wing is a larger potential challenge, so tholin clumping and sludging will need to be modeled. The time between washing events (rain) is a critical factor in any analysis. Positive pressure can be used to bleed air out of the leading edge to prevent ingestion, and may allow the clearing of clogged pores.
+
+The primary science strategy is two-fold: continuous analysis of the fluid stream (microscopy, transmittance, forward/back scatter, Raman DUV fluorescence and spectroscopy) and autonomous hand-off to physical processing instruments and in-situ experiments. To optimize science return, the continuous analysis results should be leveraged to enable automatic (perhaps AI-driven) selection of the most relevant aliquots for routing to a staging device, for later delivery to the instrument suite (if mission operators agree that the selected sample is worthy of more in-depth analysis). The next-generation Urey Instrument currently in development (Quinn, 2022) would be very well suited to the analysis of complex organics in this context, although may require some modifications to deal with methane-solvated/suspended samples. The chirality analysis feature of the Urey Instrument is particularly appealing in the search for biosignatures where complex organics abound. The instrument suite as discussed is likely to have a mass of less than 20 kg total. Other instrument options will be evaluated. Opting to include the heritage instrument suite from Dragonfly (as a secondary science payload) could support the investigation of shoreline materials using the DrACO drilling system. This could amplify the science return, provide a path for ice analysis, and bring us one step closer to understanding the methane cycle on Titan.
+
+References
+
+Barnes, J. W. (2012). AVIATR: Aerial Vehicle for In-situ and Airborne Titan Reconnaissance.  Experimental Astronomy 33. doi:10.1007/s10686-011-9275-9
+
+Barnes, J. W., et al. (2021). Science Goals and Objectives for the Dragonfly Titan Rotorcraft Relocatable Lander. Planetary Science Journal, 2:4. doi:10.3847/PSJ/abfdcf
+
+Bolze, H., et al. (2019). A Microfluidic Split-Flow Technology for Product Characterization in Continuous Low-Volume Nanoparticle Synthesis. Micromachines. doi:10.3390/mi10030179
+
+Cambau, T. (2011). Capillary Rise Between Flexible Walls. Europhysics Letters, 96:2. doi:10.1209/0295-5075/96/24001
+
+Droujko, J and Molnar, P. (2021). Open-Source, Low-Cost, In-Situ Turbidity Sensor for River Network Monitoring (Under Review). Research Square. doi:10.21203/rs.3.rs-1181854/v1
+
+Droujko, J. (2022). Turbidity Sensing Principle and Design. River Tech Labs Blog. https://rivertechlabs.org/turbidity-sensing-principle-and-design/
+
+Gasbarre, J. Wright, H. and Lewis, M. (2005). A Design Comparison of Atmospheric Flight Vehicles for the Exploration of Titan. AIAA Atmospheric Flight. doi:10.2514/6.2005-6235
+
+Hemmen, J. P. P. (2018). Towards Practical Hybrid Laminar Flow Control, Boundary Layer Stability with Suction and Scalability of Pressure Losses across Perforated Sheets. TU Delft.
+
+Ju, J., et al. (2012). A multi-structural and multi-functional integrated fog collection system in cactus. Nature Communications 3:1247. doi:10.1038/ncomms2253
+
+Lorenz, R. D. (2009). Titan Mission Studies – A Historical Review. JBIS 62.
+
+Lorenz, R. D. and Lunine, I. J. (2002). Titan's Snowline. Icarus 158. doi:10.1006/icar.2002.6880
+
+McKay, C.P. and Smith, H.D. (2005). Possibilities for Methanogenic Life in Liquid Methane on the Surface of Titan. Icarus 178. doi:10.1016/j.icarus.2005.05.018
+
+McKay, C.P. (2016). Titan as the Abode of Life. Life 6:1. doi:10.3390/life6010008
+
+Nixon, C.A., et al. (2018). Titan's cold case files - Outstanding questions after Cassini-Huygens. Planetary and Space Science 115. doi:10.1016/j.pss.2018.02.009
+
+National Academies of Sciences, Engineering, and Medicine. (2022). Origins, Worlds, and Life: A Decadal Strategy for Planetary Science and Astrobiology 2023-2032. doi:10.17226/26522
+
+Quinn, R. (2022). Personal Communication, Future of the Search for Life Workshop.
+
+Raulin, F. Brassé, C. Pocha, O. and Colla, P. (2012). Prebiotic-like Chemistry on Titan. Chem. Soc. Rev. 41, 5380-5393. doi:10.1039/c2cs35014a
+
+Sagan, C. and Khare, B. N. (1979). Tholins: organic chemistry of interstellar grains and gas. Nature 277. doi:10.1038/277102a0
+
+Waite, J. H., et al. (2007). The Process of Tholin Formation in Titan's Upper Atmosphere. Science 316:5826. doi:10.1126/science.113972 
+
+Zacny, K., et al. (2020). Drill for Acquisition of Complex Organics (DrACO) for Dragonfly, A New Frontiers Mission to Explore Titan. LPSC 2020, 1763.
+
+Zhong, T. (2018). Never-EVER Land - A Titan Flyer Concept. AIAA 2018, #1535.
