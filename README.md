@@ -40,7 +40,8 @@ A file called prompt0 is included to help orient Claude with what you have insta
 
 1. Example proposals.
 2. The 2027 solicitation in markdown, labeled 2027 A1 (Revision A1).
-3. The overview chart template.
+3. The parent SpaceTech REDDI 2026 NRA in markdown. The solicitation is an appendix to it.
+4. The overview chart template.
 
 ## Folder map
 
@@ -52,7 +53,7 @@ A file called prompt0 is included to help orient Claude with what you have insta
 6. `supplements/`: the proposal arc, NIAC advice, mission checklist, figure guidance, style subset and grep list.
 7. `templates/`: the intake summary, briefs, logs, accumulator and the proposal template docx.
 8. `tests/seed/`: the 60 seed tests, scoring protocol and rubric.
-9. `docs/`: the 2027 solicitation in markdown, the chart template, three example proposals.
+9. `docs/`: the 2027 solicitation and its parent NRA in markdown, the chart template, three example proposals.
 10. `sources/`: drop your solicitation, FAQ and source papers here.
 11. `cr_scratch/`: working notes and logs, created during a run.
 12. `PROVENANCE.md`: where each derived file came from.
