@@ -50,9 +50,10 @@
 11. Never read `Example Workorder.txt` in the repo root. It is a sample for the author to see.
 12. An agent file that holds a date the agent wrote itself fails Loop item 7: respawn once; a second miss records FAIL.
 13. Mechanical facts (counts, sizes, pages, fonts) come from printed script output only. No printed output means FAIL.
-14. During a run, method/, prompts/, supplements/, templates/ and tests/seed/ are read-only. Agents write only in cr_scratch/ and figures/.
+14. During a run, agents and the orchestrator never edit method/, prompts/, supplements/, templates/ or tests/seed/. Agents write only in cr_scratch/ and figures/. A user-requested pull is allowed (item 17).
 15. A figure value marked NOT-READ: check T1 to T6 in method/opus_figure_rule.md. All hold: show its authorization prompt and ask once. Otherwise the Fact-Checker appends [FIGURE UNVERIFIED] to the claim and the step continues.
 16. The user says to drop a rule or check: write one line under "## Author rulings" in `cr_scratch/gameplan.md` and never raise it again.
+17. The user asks to update the repo: run `git pull`, reread CLAUDE.md and this guide, and continue from the current step. Approved gates stay approved. Recheck nothing and offer no options.
 
 ## Loop
 1. Read the gameplan current-step row and the step READ LIST. Row missing: STOP rule (d).
