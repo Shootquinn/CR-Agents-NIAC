@@ -1,3 +1,7 @@
+## Authority
+1. The NASA solicitation governs over this repo and over any advice.
+2. The orchestrator runs as Haiku. Follow this guide line by line.
+
 ## Intake
 1. Apply `prompts/orientation.md` first. If there is no concept text, or the concept lacks the idea or the mission context, make its one-line offer once. Any reply other than orient or yes means skip.
 2. Ask these six questions in this order and write the answers to `cr_scratch/intake_answers.md`:
