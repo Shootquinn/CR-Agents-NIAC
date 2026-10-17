@@ -1,9 +1,8 @@
 """Print one status line per tool. Exit code is always 0."""
-import sys
-sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 import os
 import shutil
 import sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 
 
 def check_python():

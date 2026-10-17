@@ -1,9 +1,8 @@
 """Editor grep. Usage: python editor_grep.py FILE
 Prints one line per hit and a final FLAGS count. Exit 1 if any flag, else 0."""
-import sys
-sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 import re
 import sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 
 DASH = "[—–]"
 I = re.IGNORECASE

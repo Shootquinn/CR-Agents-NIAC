@@ -3,6 +3,7 @@
 Usage: build_proposal_docx.py --draft cr_scratch/stepN_writer_draft.md
          --template templates/proposal_template.docx --figures figures
          --out cr_scratch/proposal_body.docx
+         [--sources-to-get cr_scratch/sources_to_get.md]
 
 Draft: the text under the `## Draft` heading, up to the next `## ` heading.
   1. Plain paragraphs separated by blank lines. Run-in labels `**Label.**`
@@ -16,14 +17,18 @@ Draft: the text under the `## Draft` heading, up to the next `## ` heading.
      caption, and the printed line `MISSING IMAGE NN` (exit 0).
   5. A line `References` starts the reference list on a new page (References
      style). Each following non-empty line is one entry.
+  6. --sources-to-get FILE (optional): its numbered or bulleted lines are
+     appended after the references under the line SOURCES TO GET BEFORE THE
+     NEXT REVISION. Prints `SOURCES TO GET n`. A missing or empty file adds
+     nothing.
 Every TEMPLATE NOTE paragraph is removed. Exit 0 on success, 2 on a bad input.
 """
-import sys
-sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 import argparse
 import os
 import re
 import sys
+
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 
 import docx
 from docx.shared import Inches
@@ -79,7 +84,18 @@ def add_picture(doc, path, text_w):
     p.add_run().add_picture(path, width=Inches(w), height=Inches(h))
 
 
-def build(draft, template, figdir, out):
+def to_get_lines(path):
+    if not path or not os.path.exists(path):
+        return []
+    out = []
+    for ln in open(path, encoding="utf-8").read().splitlines():
+        m = re.match(r"^\s*(?:[-*]|\d+\.)\s+(.+)$", ln)
+        if m:
+            out.append(m.group(1).strip())
+    return out
+
+
+def build(draft, template, figdir, out, to_get=None):
     lines = draft_lines(draft)
     if not any(x.strip() for x in lines):
         print("NO DRAFT TEXT under ## Draft in %s" % draft)
@@ -147,6 +163,16 @@ def build(draft, template, figdir, out):
         else:
             para.append(s)
     flush()
+    get = to_get_lines(to_get)
+    if get:
+        if not in_refs:
+            h = doc.add_paragraph("References", style="References")
+            h.paragraph_format.page_break_before = True
+        doc.add_paragraph("SOURCES TO GET BEFORE THE NEXT REVISION",
+                          style="Normal").runs[0].bold = True
+        for g in get:
+            add_runs(doc.add_paragraph(style="Normal"), g)
+    print("SOURCES TO GET %d" % len(get))
     if prompts:
         pdir = os.path.join(figdir, "prompts")
         os.makedirs(pdir, exist_ok=True)
@@ -172,5 +198,6 @@ if __name__ == "__main__":
     ap.add_argument("--template", required=True)
     ap.add_argument("--figures", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--sources-to-get")
     a = ap.parse_args()
-    sys.exit(build(a.draft, a.template, a.figures, a.out))
+    sys.exit(build(a.draft, a.template, a.figures, a.out, a.sources_to_get))

@@ -1,5 +1,5 @@
 ## Sources digest
-Input: up to four source files. Output file: cr_scratch/sources_digest.md.
+Input: up to four source text files from `cr_scratch/lit/` (S files are fetched papers, U files are the user's own files). Output file: `cr_scratch/sources_digest_{B}.md`, where {B} is the batch number.
 
 Output headings, in order:
 1. ## Files read
@@ -10,13 +10,13 @@ Output headings, in order:
 Digest section:
 1. First line is the legend: `Figure flag: Y means the source holds a figure; analysis of a figure follows method/opus_figure_rule.md.`
 2. Then the table header: `| id | citation | claims | figure flag |`
-   The id is S followed by the source's position in the READ LIST (S1, S2). Write nothing else in the id cell.
+   The id is the file's base name (S01, U01). Write nothing else in the id cell.
 3. Then exactly one row per source.
 
 Row format:
-1. Citation cell: `author=<text>; year=<text>; title=<text>; doi=<text>`. Copy each value character for character from the source file.
+1. Citation cell: `author=<text>; year=<text>; title=<text>; doi=<text>`. Copy each value character for character from the file: its `Citation:` line first, then its title page.
 2. An absent value reads `[REFERENCE NEEDED]`.
-3. Claims cell: exactly three quotes in straight double quotes, each copied from the source file, 25 words or fewer each, separated by ` / `.
+3. Claims cell: exactly three quotes in straight double quotes, each copied from the source file, 25 words or fewer each, separated by ` / `. Pick the quotes that bear on the concept's claims.
 4. Figure flag cell: Y or N.
 
 Rules:

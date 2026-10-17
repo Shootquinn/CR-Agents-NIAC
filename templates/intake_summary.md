@@ -12,7 +12,7 @@ Each READ LIST path with its first 8 words quoted.
 | F06 | anticipated number of awards | | |
 | F07 | period of performance | | |
 | F08 | overview chart page limit and orientation | | |
-| F09 | Technical and Management page limit | | |
+| F09 | Step A Technical and Management page limit | | |
 | F10 | references rule | | |
 | F11 | characters per inch limit | | |
 | F12 | lines per vertical inch limit | | |
@@ -26,7 +26,6 @@ Each READ LIST path with its first 8 words quoted.
 | F20 | weight Mission | | |
 | F21 | weight Technical Approach | | |
 | F22 | invite threshold score | | |
-| F24 | blackout rule | | |
 | F25 | submission system | | |
 
 ## Weights line
@@ -74,8 +73,8 @@ Write the warning line only if answer 6 is "no" and status is OPEN. Otherwise wr
 6. Does the proposer have a UEI in SAM.gov, yes or no.
 
 ## Checklist
-1. 25 field rows.
-2. 22 requirement rows.
+1. One row per field in the Fields table.
+2. One row per requirement in the Requirements table.
 3. Every row has a page cite or NOT FOUND.
 4. Weights line has 4 values.
 5. Status line is OPEN or CLOSED.

@@ -7,6 +7,7 @@
    3. For each FAIL that repeats from an earlier cycle, ask "system problem or one-off?" and record the answer in one line.
    4. Append one accumulator line per persona per cycle to accumulator.md (a permitted second write), under that persona's heading, in the line format of templates/accumulator.md.
    5. At P9: run templates/submit_checklist.md. Write each yes or no answer with a cite (file and line).
+   6. Never list [SOURCE NEEDED] marks or cr_scratch/sources_to_get.md entries under Open items.
 4. Checks:
    1. Every reviewer file read has a "## Checklist" section: PASS, FAIL or UNVERIFIED, with the file named.
    2. Verdict rule applied: PASS, FAIL or UNVERIFIED, with the failing row quoted.

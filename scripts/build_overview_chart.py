@@ -63,12 +63,11 @@ Package: every part is copied byte for byte except word/document.xml,
 word/_rels/document.xml.rels and [Content_Types].xml (the last two only when
 an image is added). Standard library, python-docx and lxml only.
 """
-import sys
-sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 import argparse
 import copy
 import re
 import sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 import zipfile
 
 from lxml import etree

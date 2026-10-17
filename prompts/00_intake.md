@@ -18,6 +18,7 @@ Row format:
 1. The label page is the printed page number of the range. Examples: `SOL p.10`, `FAQ p.8`, `NRA p.11`.
 2. A value is a quote of 15 words or fewer.
 3. Copy values from the range. Convert only dates: write dates as YYYY-MM-DD. Write times as printed.
+4. Write no row from Step B content (Step B proposals, Step B criteria). Step A and Phase I rows only.
 
 Checklist items:
 1. Every row has a page cite.
@@ -36,7 +37,7 @@ Field list:
 | F06 | anticipated number of awards |
 | F07 | period of performance |
 | F08 | overview chart page limit and orientation |
-| F09 | Technical and Management page limit |
+| F09 | Step A Technical and Management page limit |
 | F10 | references rule |
 | F11 | characters per inch limit |
 | F12 | lines per vertical inch limit |
@@ -50,7 +51,6 @@ Field list:
 | F20 | weight Mission |
 | F21 | weight Technical Approach |
 | F22 | invite threshold score |
-| F24 | blackout rule |
 | F25 | submission system |
 
 ## Merge
@@ -64,7 +64,7 @@ Steps:
 1. Output follows the template headings exactly.
 2. Write one row per field id in the field list and one row per requirement id in the template.
 3. If two chunks give different values for a field, keep both values with their page cites and mark the row CONFLICT.
-4. A field no chunk supplied reads NOT FOUND. For F24 write: NOT FOUND in the solicitation documents; guide Rules item 7 applies.
+4. A field no chunk supplied reads NOT FOUND.
 5. The weights line is the four weight numbers in the order Innovation, Impact, Mission, Technical Approach. Write digits only, joined by slashes, with no spaces and no word percent: the form n/n/n/n.
 6. Status is OPEN if the DATE STRING is earlier than or equal to the F04 date. Compare year, then month, then day. Status is CLOSED if the DATE STRING is later. The agent only compares and writes no other date.
 7. Early-warning line: if answer 6 is "no" and status is OPEN, write the template's warning line with F04 copied in. Otherwise write "none".
