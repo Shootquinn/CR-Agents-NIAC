@@ -20,10 +20,6 @@ This is designed to run in Claude Code in a terminal, using spawned light-weight
 
 Haiku cannot read figure details reliably. Bar heights, plotted points and small print in chart images are marked NOT-READ, and any claim that leans on them is marked [FIGURE UNVERIFIED]. Opus figure analysis is default off and runs only when you authorize it, per method/opus_figure_rule.md.
 
-## AI use must be cited
-
-NASA wants AI use cited (NRA p.11-12, FAQ Q45). The repo logs it in cr_scratch/ai_log.md as you go, so the citation is ready when you are.
-
 ## Requirements
 
 1. Python 3.

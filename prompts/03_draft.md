@@ -14,6 +14,5 @@ Spacing should be "single" with 4 pt after and 0 pt before for all styles, inclu
 All title and heading styles should use 12 point font.
 Mark each unsourced claim [SOURCE NEEDED]. [CHANGED: unsourced claim rule]
 Figure rule: write the caption as "Figure N: <caption>." and on the next line "Image prompt: <laconic prompt>" for a figure that code cannot draw, per the guide section "Figures". [CHANGED: figure form from the guide]
-Cite AI use per method/ai_citation.md. [CHANGED: product citation rule]
 
 Don't forget to do your overview chart. It'll take hours! It's also the only place you can put in work plan / team / budget data since none of that is requested in the proposal body at this juncture (although I always try to put at least a sentence about work to be done in the proposal).

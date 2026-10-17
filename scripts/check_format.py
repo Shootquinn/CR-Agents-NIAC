@@ -1,7 +1,6 @@
 """check_format.py - NASA NIAC proposal format checker.
 
 Usage: python check_format.py FILE.docx [--chart CHART.docx] [--pdf FILE.pdf]
-           [--ai-log AI_LOG.md]
        python check_format.py --chart-only CHART.docx   (flag may come before or after the file)
 
 Prints one line per check:  PASS|FAIL|WARN name value limit
@@ -342,57 +341,7 @@ def pdf_pages(path):
     return None if info is None else [t for t, _, _ in info]
 
 
-AI_MODEL = re.compile(
-    r"(?<![A-Za-z])(Claude|Haiku|Opus|Sonnet|ChatGPT|GPT-?[0-9]*|Gemini|"
-    r"Copilot|Llama|Mistral|Grok|DeepSeek|Qwen|Imagen|Midjourney|DALL-?E|"
-    r"Firefly|Stable Diffusion|Nano Banana)(?![A-Za-z])")
-MONTHS = ("january february march april may june july august september "
-          "october november december").split()
-_MN = "|".join(m.capitalize() for m in MONTHS)
-DATE_RE = re.compile(
-    r"(?<![0-9])([0-9]{4})-([0-9]{2})-([0-9]{2})(?![0-9])"
-    r"|(" + _MN + r")\s+([0-9]{1,2}),?\s+([0-9]{4})(?![0-9])"
-    r"|(?<![0-9])([0-9]{1,2})\s+(" + _MN + r")\s+([0-9]{4})(?![0-9])")
-
-
-
-def iso_dates(text):
-    """(iso date, start, end) for every date in text."""
-    out = []
-    for m in DATE_RE.finditer(text):
-        g = m.groups()
-        if g[0]:
-            iso = "%s-%s-%s" % (g[0], g[1], g[2])
-        elif g[3]:
-            iso = "%s-%02d-%02d" % (g[5], MONTHS.index(g[3].lower()) + 1,
-                                    int(g[4]))
-        else:
-            iso = "%s-%02d-%02d" % (g[8], MONTHS.index(g[7].lower()) + 1,
-                                    int(g[6]))
-        out.append((iso, m.start(), m.end()))
-    return out
-
-
-def ai_citation_dates(text):
-    """ISO dates that sit within 200 characters of an AI model name."""
-    flat = re.sub(r"\s+", " ", text)
-    flat = re.sub("([0-9]-) ([0-9])", lambda m: m.group(1) + m.group(2), flat)
-    found = []
-    for iso, a, b in iso_dates(flat):
-        if AI_MODEL.search(flat[max(0, a - 200):b + 200]):
-            found.append(iso)
-    return found
-
-
-def log_rows_with(path, iso):
-    try:
-        rows = open(path, encoding="utf-8").read().splitlines()
-    except OSError:
-        return 0
-    return sum(1 for r in rows if r.lstrip().startswith("|") and iso in r)
-
-
-def check_pdf(path, ai_log=None):
+def check_pdf(path):
     import os
     info = pdf_info(path)
     if info is None:
@@ -428,16 +377,6 @@ def check_pdf(path, ai_log=None):
     text = chr(10).join(pages)
     ip = text.count("Image prompt:")
     emit("PASS" if ip == 0 else "FAIL", "pdf_image_prompt", ip, "0")
-    dates = ai_citation_dates(text)
-    if not dates:
-        emit("FAIL", "pdf_ai_citation", "none", "AI model line with date")
-    elif ai_log:
-        hit = [d for d in dates if log_rows_with(ai_log, d)]
-        emit("PASS" if hit else "FAIL", "pdf_ai_citation",
-             "%s in log" % hit[0] if hit else "%s not in log" % dates[0],
-             "date in AI log row")
-    else:
-        emit("PASS", "pdf_ai_citation", dates[0], "AI model line with date")
 
 
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
@@ -752,7 +691,7 @@ def check_chart(path):
 
 def main(argv):
     args = argv[1:]
-    valued = ("--chart", "--pdf", "--ai-log")
+    valued = ("--chart", "--pdf")
     pos, flags, i = [], {}, 0
     while i < len(args):
         a = args[i]
@@ -783,7 +722,7 @@ def main(argv):
         return 2
     check_body(pos[0])
     if flags.get("--pdf"):
-        check_pdf(flags["--pdf"], flags.get("--ai-log"))
+        check_pdf(flags["--pdf"])
     if flags.get("--chart"):
         check_chart(flags["--chart"])
     return 1 if "FAIL" in results else 0

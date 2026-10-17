@@ -50,7 +50,6 @@ Field list:
 | F20 | weight Mission |
 | F21 | weight Technical Approach |
 | F22 | invite threshold score |
-| F23 | AI citation rule (usually in the NRA; the FAQ may add to it) |
 | F24 | blackout rule |
 | F25 | submission system |
 
@@ -63,7 +62,7 @@ Input files:
 
 Steps:
 1. Output follows the template headings exactly.
-2. Write one row per field id F01 to F25 and one row per R-c01 to R-c22.
+2. Write one row per field id in the field list and one row per requirement id in the template.
 3. If two chunks give different values for a field, keep both values with their page cites and mark the row CONFLICT.
 4. A field no chunk supplied reads NOT FOUND. For F24 write: NOT FOUND in the solicitation documents; guide Rules item 7 applies.
 5. The weights line is the four weight numbers in the order Innovation, Impact, Mission, Technical Approach. Write digits only, joined by slashes, with no spaces and no word percent: the form n/n/n/n.

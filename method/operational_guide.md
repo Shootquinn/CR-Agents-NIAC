@@ -21,7 +21,7 @@
 3. Read the gameplan header and the current-step row (`cr_scratch/gameplan.md`). In file names, {N} is the run-sequence row number (P5 gives step5).
 4. Read no accumulator file. Read no file in a big-brother repo.
 5. After compaction: skip prompt0. Read the progress-row state first (step, cycle, spawn_count, last_spawn, last_file_verified).
-6. First session only: create cr_scratch/ and figures/ if missing, and copy templates/ai_log.md to cr_scratch/ai_log.md.
+6. First session only: create cr_scratch/ and figures/ if missing.
 7. After intake (P1): if `cr_scratch/gameplan.md` is missing, write it from templates/gameplan_row.md with one row per run-sequence row P1 to P9, cycle 1, spawn_count 0, status not started. Roster: Manager, Software Engineer, Writer, Editor, Fact-Checker, Designer, Systems Engineer.
 
 ## Caps
@@ -60,12 +60,12 @@
 4. Test suite or outline missing: spawn the Software Engineer for it, then repeat item 3(c).
 5. Spawn the Writer, wait for its file, then spawn the Editor.
 6. Review wave: spawn the Fact-Checker and the Designer in one message with distinct output paths. When both return, spawn three scoring batches, one per test group (compliance, sizzle, format); compare each file's row count to its group size.
-7. After each spawn: check the file exists, line 1 starts with "## ", line count is at most MAX LINES, checklist rows equal items. Any miss: respawn once and state the miss. Second miss: record FAIL. Append one AI-log row (model value passed, command-line date output, role).
+7. After each spawn: check the file exists, line 1 starts with "## ", line count is at most MAX LINES, checklist rows equal items. Any miss: respawn once and state the miss. Second miss: record FAIL.
 8. Read only each file's "## Checklist" section. Write each FAIL to `cr_scratch/step{N}_fix_list.md`: file, line, change required, owner (the persona that wrote that file).
 9. FAIL exists and cycle count is below 3: add 1 to the cycle count, respawn the Writer with the fix list and the newest draft file (`step{N}_editor_pass.md` if it exists, else `step{N}_writer_draft.md`) in its READ LIST; send fix lines owned by another persona to that persona's respawn; respawn only FAILED reviewers, repeat item 5 for the Writer only, run `scripts/editor_grep.py`, then items 6 to 8 for FAILED reviewers only.
 10. No FAIL, or cycle 3 done: spawn the Manager close. Read its "## Verdict" and "## Open items" only.
 11. Update the gameplan row: step, cycles used, open items. Open no next step.
-12. Before any reply to the author: the gameplan row and `cr_scratch/ai_log.md` are current (log rows equal spawn_count). Apply the Stop rules. Give the author the verdict, open items and file paths. Wait for APPROVE.
+12. Before any reply to the author: the gameplan row is current. Apply the Stop rules. Give the author the verdict, open items and file paths. Wait for APPROVE.
 
 ## Stop
 1. STOP rule (a): cycle 3 ended with any FAIL.
@@ -95,16 +95,15 @@
 2. A figure that Python cannot draw carries on the next line "Image prompt: <laconic prompt>" in one sentence with no hedging, with no text or labels in the image, landscape.
 3. A code-drawn plot carries no Image prompt line.
 4. The user generates the image with any tool they choose and drops the file in figures/.
-5. Cite the tool, version, date and time of any AI-generated image per method/ai_citation.md.
-6. Aim for 200 DPI or more at the printed size; scripts/check_format.py warns below that.
+5. Aim for 200 DPI or more at the printed size; scripts/check_format.py warns below that.
 
 ## Docx
-1. Before the build: `cr_scratch/ai_log.md` holds one row per spawn (row count equals the summed spawn_count). Add the AI-use entry per method/ai_citation.md item 7 as the last References line of the draft.
-2. Build the body: `python scripts/build_proposal_docx.py --draft cr_scratch/step{N}_writer_draft.md --template templates/proposal_template.docx --figures figures --out cr_scratch/proposal_body.docx`. Each `MISSING IMAGE NN` line goes to the fix list.
-3. Build the chart per `skills/overview_chart/SKILL.md`; it writes `cr_scratch/overview_chart.docx`.
-4. Assemble: `python scripts/assemble_pdf.py --chart cr_scratch/overview_chart.docx --body cr_scratch/proposal_body.docx --out cr_scratch/proposal_stepA.pdf`.
-5. Check the body and the PDF: `python scripts/check_format.py cr_scratch/proposal_body.docx --pdf cr_scratch/proposal_stepA.pdf --ai-log cr_scratch/ai_log.md`.
-6. Check the chart: `python scripts/check_format.py --chart-only cr_scratch/overview_chart.docx`.
-7. Every FAIL line goes to the fix list. Paste the printed lines; the format test group reads them.
-8. The output `RENDER TOOL MISSING` means install LibreOffice, then stop. Run no later step.
-9. Prompt text for each figure is in `figures/prompts/NN.txt`. The user adds the image as `figures/NN.png` or `figures/NN.jpg`, then repeat items 2, 4 and 5.
+1. Build the body: `python scripts/build_proposal_docx.py --draft cr_scratch/step{N}_writer_draft.md --template templates/proposal_template.docx --figures figures --out cr_scratch/proposal_body.docx`. Each `MISSING IMAGE NN` line goes to the fix list.
+2. Build the chart per `skills/overview_chart/SKILL.md`; it writes `cr_scratch/overview_chart.docx`.
+3. Assemble: `python scripts/assemble_pdf.py --chart cr_scratch/overview_chart.docx --body cr_scratch/proposal_body.docx --out cr_scratch/proposal_stepA.pdf`.
+4. Check the body and the PDF: `python scripts/check_format.py cr_scratch/proposal_body.docx --pdf cr_scratch/proposal_stepA.pdf`.
+5. Check the chart: `python scripts/check_format.py --chart-only cr_scratch/overview_chart.docx`.
+6. Every FAIL line goes to the fix list. Paste the printed lines; the format test group reads them.
+7. The output `RENDER TOOL MISSING` means install LibreOffice, then stop. Run no later step.
+8. Prompt text for each figure is in `figures/prompts/NN.txt`. The user adds the image as `figures/NN.png` or `figures/NN.jpg`, then repeat items 1, 3 and 4.
+9. If NSPIRES asks about AI use, the user may enter: "AI tools were used in the drafting and copy-editing of this proposal."

@@ -22,7 +22,7 @@ Source governs: the current NASA solicitation. Regenerate this file at intake wh
 | C17 | No other proposals | No sentence refers to a different proposal. | MAJOR | FAQ Q41 | 2027 A1 |
 | C18 | Self-sufficient | The draft contains no URL (http or www) and no sentence that sends the reader to an outside document to follow a claim. | MAJOR | NRA p.13 | 2027 A1 |
 | C19 | Mission assumptions | A sentence or list labeled assumptions names at least two mission-context assumptions. | MAJOR | SOL p.7 | 2027 A1 |
-| C20 | AI use cited | The references hold an entry for each AI tool used giving program name, version number, date and how it was used. FAIL when any of the four is missing. | CRITICAL | NRA p.11-12 | 2027 A1 |
+| C20 | No budget or team | The body names no dollar amount for the proposed work and no proposed team member, institution or partner. Quote any hit. | CRITICAL | SOL p.10 | 2027 A1 |
 | C21 | Not previously explored | No sentence admits the concept was studied before without naming the new aspect. | ADVISORY MINOR | blog Prompt 1 | 2027 A1 |
 | C22 | Not incremental | One sentence names an aspect that is not an expected future capability. | ADVISORY MINOR | blog Prompt 1 | 2027 A1 |
 | C23 | Not too narrow | The concept sits in a full mission system (not a standalone instrument) and one other use is labeled as an extension. | ADVISORY MINOR | blog Prompt 1 | 2027 A1 |

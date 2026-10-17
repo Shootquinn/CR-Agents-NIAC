@@ -183,11 +183,11 @@ Field 10 RULES: R-a to R-h pasted from the template
 Field 1 AGENT PARAMETER: model: haiku
 Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_manager_close.md" "{ROOT}/cr_scratch/accumulator.md"
 Field 3 PERSONA: method/personas/manager.md
-Field 4 TASK: Append one accumulator line per persona per cycle. Write the submit check and the AI-citation entry. Verdict: READY or NOT READY.
+Field 4 TASK: Append one accumulator line per persona per cycle. Write the submit check. Verdict: READY or NOT READY.
 Field 5 FIXED CONTEXT: the Field 3 file
-Field 6 READ LIST (base {ROOT}/): `templates/submit_checklist.md` `cr_scratch/ai_log.md` `cr_scratch/step{N}_fix_list.md` `cr_scratch/step{N}_fact_checker_review.md` `cr_scratch/step{N}_designer_review.md`
-Field 7 CHECKLIST: 1) each submit row has evidence. 2) counts are script values. 3) citation copies log values. 4) one accumulator line per persona per cycle. 5) Open items lists FAILs.
-Field 8 REQUIRED HEADINGS: ## Files read; ## Submit check; ## Accumulator entries; ## AI-citation entry; ## Verdict; ## Open items; ## Checklist
+Field 6 READ LIST (base {ROOT}/): `templates/submit_checklist.md` `cr_scratch/step{N}_fix_list.md` `cr_scratch/step{N}_fact_checker_review.md` `cr_scratch/step{N}_designer_review.md`
+Field 7 CHECKLIST: 1) each submit row has evidence. 2) counts are script values. 3) one accumulator line per persona per cycle. 4) Open items lists FAILs.
+Field 8 REQUIRED HEADINGS: ## Files read; ## Submit check; ## Accumulator entries; ## Verdict; ## Open items; ## Checklist
 Field 9 MAX LINES 80, MAX WORDS 900; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
 

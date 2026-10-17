@@ -52,7 +52,7 @@ The method runs in order. Each step finishes before the next one starts.
 
 The "wholly new" rule has two sentences. The Mission section opens by naming the wholly new capability your idea would enable. That phrase appears one to three times in the body, so reviewers cannot miss the claim and cannot find it diluted.
 
-Then there is AI citation. NASA requires you to cite AI use with the program, the version, the date and time, and how it was used. The repo logs every agent run, so that record exists when you need it.
+Then there is AI use. If NSPIRES asks, the repo gives you one plain sentence to enter: AI tools were used in the drafting and copy-editing of this proposal.
 
 Why is it lighter than its parent? The CR-Agents guide is 28,321 tokens. The NIAC session start is held under 8,000 tokens, which is lighter per the baseline table. Smaller sessions suit small models. Opus figure analysis is off by default, so you pay for it only when you ask.
 

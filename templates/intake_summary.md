@@ -26,7 +26,6 @@ Each READ LIST path with its first 8 words quoted.
 | F20 | weight Mission | | |
 | F21 | weight Technical Approach | | |
 | F22 | invite threshold score | | |
-| F23 | AI citation rule | | |
 | F24 | blackout rule | | |
 | F25 | submission system | | |
 
@@ -52,7 +51,6 @@ Four values in the order Innovation, Impact, Mission, Technical Approach, separa
 | R-c14 | No Phase II content and no Phase II resource request | | |
 | R-c15 | Proposal stands alone: no reference to other proposals, no reliance on web links | | |
 | R-c16 | Body self-sufficient without the cover page | | |
-| R-c17 | Non-team content, including AI, cited with program, version, date and time, how used | | |
 | R-c18 | References optional, standard format | | |
 | R-c19 | Step A body and cover page carry no budget and no proposed team | | |
 | R-c20 | Work-plan outline showing understanding of major issues and course of study | | |
