@@ -16,13 +16,9 @@ It helps you write one thing: the 3-page NIAC Phase I Step A proposal. The outpu
 
 ## How it runs
 
-Every agent runs as Haiku, including the orchestrator, so the method files read like a checklist.
+This is designed to run in Claude Code in a terminal, using spawned light-weight Haiku agents so it can work with the $20 Claude plan.
 
 Haiku cannot read figure details reliably. Bar heights, plotted points and small print in chart images are marked NOT-READ, and any claim that leans on them is marked [FIGURE UNVERIFIED]. Opus figure analysis is default off and runs only when you authorize it, per method/opus_figure_rule.md.
-
-## Who is in charge
-
-The NASA solicitation governs over this repo and over the blog advice.
 
 ## AI use must be cited
 
@@ -34,19 +30,21 @@ NASA wants AI use cited (NRA p.11-12, FAQ Q45). The repo logs it in cr_scratch/a
 2. `pip install -r scripts/requirements.txt`
 3. LibreOffice, for PDF output.
 
+A file called prompt0 is included to help orient Claude with what you have installed and check to make sure it can access everything, and teach it skills. It is targeted towards Windows but you can work with it to adjust the prompt0 file if you are on a different system. 
+
 ## Sample work order
 
-`Example Workorder.txt` in the root is a sample work order. Look at it to see what a finished request looks like.
+`Example Workorder.txt` in the root is a sample work order. Look at it to see what a finished request looks like. The workorder doesn't need to be anything more than a summary of your idea, but it should indicate how you feel about challenges. If you've thought about competing approaches, it would be good to write that down in here too. 
 
 ## What is in docs/
 
 1. Example proposals.
-2. The 2027 solicitation in markdown, labeled 2027 A1.
+2. The 2027 solicitation in markdown, labeled 2027 A1 (Revision A1).
 3. The overview chart template.
 
 ## Folder map
 
-1. `CLAUDE.md`: the orchestrator's entry point. Do not edit.
+1. `CLAUDE.md`: the orchestrator's entry point and wake-up/post-compaction instructions.
 2. `method/`: the guide, personas, spawn files, tests method, pull protocol.
 3. `prompts/`: intake, sources, orientation and the three method prompts.
 4. `scripts/`: format and tool checks, the editor grep, the chart and docx builders, PDF assembly.
@@ -61,11 +59,5 @@ NASA wants AI use cited (NRA p.11-12, FAQ Q45). The repo logs it in cr_scratch/a
 
 ## Big brothers
 
-1. Original: https://github.com/Shootquinn/CR-Agents (general method and docx bundle).
+1. Original: https://github.com/Shootquinn/CR-Agents (general Engineering method and docx bundle). This can be used for 3D modeling, engineering design, pretty much everything. This NIAC variant is a lighter-weight more focused version of this main thread.
 2. Legal: https://github.com/Shootquinn/CR-Agents-Legal (contract work). The legal variant is beta.
-
-Nothing ships from the legal repo. See method/pull_protocol.md.
-
-## License
-
-The Unlicense (public domain), except the NASA files and example proposals that LICENSE lists. Your proposal is still your problem to solve.
