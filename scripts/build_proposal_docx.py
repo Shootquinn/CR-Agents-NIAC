@@ -18,6 +18,8 @@ Draft: the text under the `## Draft` heading, up to the next `## ` heading.
      style). Each following non-empty line is one entry.
 Every TEMPLATE NOTE paragraph is removed. Exit 0 on success, 2 on a bad input.
 """
+import sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 import argparse
 import os
 import re

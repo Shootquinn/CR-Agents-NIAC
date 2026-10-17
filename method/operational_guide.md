@@ -13,10 +13,10 @@
 
 ## Session start
 1. Read in this order: CLAUDE.md, this guide.
-2. First session only: read method/tool_checks.md, then run `python scripts/check_tools.py` before any spawn.
+2. First session only: read prompt0.md, then run `python scripts/check_tools.py` before any spawn.
 3. Read the gameplan header and the current-step row (`cr_scratch/gameplan.md`). In file names, {N} is the run-sequence row number (P5 gives step5).
 4. Read no accumulator file. Read no file in a big-brother repo.
-5. After compaction: skip tool checks. Read the progress-row state first (step, cycle, spawn_count, last_spawn, last_file_verified).
+5. After compaction: skip prompt0. Read the progress-row state first (step, cycle, spawn_count, last_spawn, last_file_verified).
 6. First session only: create cr_scratch/ and figures/ if missing, and copy templates/ai_log.md to cr_scratch/ai_log.md.
 7. After intake (P1): if `cr_scratch/gameplan.md` is missing, write it from templates/gameplan_row.md with one row per run-sequence row P1 to P9, cycle 1, spawn_count 0, status not started. Roster: Manager, Software Engineer, Writer, Editor, Fact-Checker, Designer, Systems Engineer.
 
@@ -81,7 +81,7 @@
 | P3 | Test suite from the seed library, 60 target, 70 cap | prompts/01_test_suite.md, tests/seed/ | APPROVE |
 | P4 | Outline; Software Engineer validates topic sentences against the suite | prompts/02_outline.md | none |
 | P5 | Draft: Writer, then Editor, then script check | prompts/03_draft.md, scripts/editor_grep.py | none |
-| P6 | Review wave, Loop items 5 to 9 | method/niac_guide.md | none |
+| P6 | Review wave, Loop items 5 to 9 | method/operational_guide.md | none |
 | P7 | Chart and figures; Designer writes figure briefs | skills/overview_chart/SKILL.md, scripts/build_overview_chart.py | none |
 | P8 | Build docx and PDF, then format check | scripts/build_proposal_docx.py, scripts/assemble_pdf.py, scripts/check_format.py | APPROVE |
 | P9 | Submit check; Systems Engineer one-shot final review, then Manager close | templates/submit_checklist.md, templates/cover_fields.md | APPROVE |

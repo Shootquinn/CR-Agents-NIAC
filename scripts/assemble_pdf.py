@@ -10,6 +10,8 @@ env NIAC_SOFFICE (a path; the value `none` hides LibreOffice), `soffice` on
 PATH, then the default install paths for Windows, macOS and Linux. Not found:
 prints RENDER TOOL MISSING and exits 1.
 """
+import sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 import argparse
 import glob
 import os

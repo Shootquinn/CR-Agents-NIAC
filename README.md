@@ -56,6 +56,7 @@ A file called prompt0 is included to help orient Claude with what you have insta
 10. `sources/`: drop your solicitation, FAQ and source papers here.
 11. `cr_scratch/`: working notes and logs, created during a run.
 12. `PROVENANCE.md`: where each derived file came from.
+13. `prompt0.md`: first-session tool checks and Windows setup.
 
 ## Big brothers
 

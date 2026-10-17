@@ -32,6 +32,8 @@ lpi = lines per page / text height in inches. Each estimated line is
 Both values are approximations for a Word render; the PDF is the final
 authority.
 """
+import sys
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
 import re
 import sys
 

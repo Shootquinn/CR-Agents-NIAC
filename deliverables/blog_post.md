@@ -10,7 +10,7 @@ The problem is that nobody told the AI what passing looks like, so it guessed.
 
 This repo fixes that order of operations. It is a small team of Haiku agents run by a checklist orchestrator. You hand it a raw idea. It hands back an overview chart, a 3-page body and references, each checked against tests that were written before a single sentence of the draft existed. You do not need a grants office.
 
-The repo is named `[NIAC REPO URL PENDING]`. It descends from a parent method called CR-Agents (https://github.com/Shootquinn/CR-Agents), which handles general writing and research. This one is tuned for one job: a first-timer's Step A proposal to NASA's NIAC program.
+The repo is CR-Agents-NIAC (https://github.com/Shootquinn/CR-Agents-NIAC). It descends from a parent method called CR-Agents (https://github.com/Shootquinn/CR-Agents), which handles general writing and research. This one is tuned for one job: a first-timer's Step A proposal to NASA's NIAC program.
 
 If you have never written a federal proposal, good. Neither had anyone, the first time.
 

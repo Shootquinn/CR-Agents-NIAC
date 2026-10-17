@@ -5,8 +5,9 @@ Legal repo: https://github.com/Shootquinn/CR-Agents-Legal at 6737e64 (beta)
 
 | path | source repo | source path | commit | date | kind |
 |---|---|---|---|---|---|
-| niac-repo/CLAUDE.md | CR-Agents | CLAUDE.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
-| niac-repo/method/niac_guide.md | CR-Agents | method/operational_guide.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
+| niac-repo/CLAUDE.md | CR-Agents | CLAUDE.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-17 | verbatim |
+| niac-repo/prompt0.md | CR-Agents | prompt0.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
+| niac-repo/method/operational_guide.md | CR-Agents | method/operational_guide.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
 | niac-repo/method/tdd_method.md | CR-Agents | method/tdd_method.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
 | niac-repo/templates/accumulator.md | CR-Agents | templates/accumulator.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
 | niac-repo/method/personas/manager.md | CR-Agents | method/operational_guide.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
