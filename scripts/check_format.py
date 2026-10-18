@@ -745,8 +745,8 @@ def check_chart(path):
         n = len(re.findall(r"\b%s\b" % wd, txt, re.I))
         emit("PASS" if n == 0 else "FAIL", "chart_word_" + wd, n, "0")
     wc = len(txt.split())
-    emit("PASS" if 200 <= wc <= 360 else "FAIL", "chart_word_count", wc,
-         "200-360")
+    emit("PASS" if 180 <= wc <= 360 else "FAIL", "chart_word_count", wc,
+         "180-360")
     nref = len(re.findall(r"\bsee (section|figure)\b", txt, re.I))
     emit("PASS" if nref == 0 else "FAIL", "chart_see_refs", nref, "0")
     nd = sum(txt.count(c) for c in DASHES)

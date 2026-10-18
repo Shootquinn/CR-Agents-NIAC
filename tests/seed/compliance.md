@@ -3,7 +3,7 @@ Source governs: the current NASA solicitation. Regenerate this file at intake wh
 
 | ID | name | criterion (PASS when) | priority | source | cycle |
 |---|---|---|---|---|---|
-| C01 | Relevance to NASA mission | A sentence names a US government or commercial benefit in space or aeronautics (a named agency, mission class or market) that the concept delivers. FAIL when no such sentence exists. | CRITICAL | SOL p.19 | 2027 A1 |
+| C01 | Relevance to NASA mission | Sentences name both a national benefit (a named agency, program or mission class) and a commercial or industry benefit (a named market, sector or spin-off) in space or aeronautics that the concept delivers. FAIL when either is missing; quote both. | CRITICAL | SOL p.19 | 2027 A1 |
 | C02 | Technical credibility | PASS unless one of two faults is found. Fault 1: a claim of energy, power or mass output above input with no source and no calculation. Fault 2: two stated numbers that contradict each other (quote both). A claim that is only bold or unsourced is not a fault here; C08 and the Fact-Checker cover it. | CRITICAL | SOL p.19 | 2027 A1 |
 | C03 | Programmatic credibility | The draft names at least one implementation barrier (budget, policy, supply or infrastructure) and one approach to overcome it. | CRITICAL | SOL p.19-20 | 2027 A1 |
 | C04 | Innovation present | The draft states in one sentence what is new, names one prior effort or alternative, and states one difference from it. | MAJOR | SOL p.20 | 2027 A1 |
@@ -23,7 +23,7 @@ Source governs: the current NASA solicitation. Regenerate this file at intake wh
 | C18 | Self-sufficient | The body text, from the first paragraph to the References heading, contains no URL (http or www) and no sentence that sends the reader to an outside document to follow a claim. Reference entries keep their https://doi.org/ DOIs (APA 7). | MAJOR | NRA p.13 | 2027 A1 |
 | C19 | Mission assumptions | One sentence labeled Assumptions names at least two mission-context assumptions (target, orbit, host, environment). Design values and cited constants are not assumptions. | MAJOR | SOL p.7 | 2027 A1 |
 | C20 | No budget or team | The body names no dollar amount for the proposed work and no proposed team member, institution or partner. Quote any hit. | CRITICAL | SOL p.10 | 2027 A1 |
-| C21 | Not previously explored | No sentence admits the concept was studied before without naming the new aspect. | ADVISORY MINOR | blog Prompt 1 | 2027 A1 |
+| C21 | Established physics | One sentence states that the concept works within established physics, or names its conflict with established physics and defends it. Quote it. | MAJOR | SOL p.19 | 2027 A1 |
 | C22 | Not incremental | One sentence names an aspect that is not an expected future capability. | ADVISORY MINOR | blog Prompt 1 | 2027 A1 |
 | C23 | Not too narrow | The concept sits in a full mission system (not a standalone instrument) and one other use is labeled as an extension. | ADVISORY MINOR | blog Prompt 1 | 2027 A1 |
 | W1 | Wholly new capability | The Mission text states in one sentence the wholly new capability that no existing or previously explored mission has. Quote the sentence. | CRITICAL | SOL p.22 | 2027 A1 |

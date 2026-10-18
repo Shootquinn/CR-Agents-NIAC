@@ -24,7 +24,8 @@ stays, and check_format.py fails it.
      style). Each following non-empty line is one entry.
   6. --sources-to-get FILE (optional): its numbered or bulleted lines are
      appended after the references under the line SOURCES TO GET BEFORE THE
-     NEXT REVISION. Prints `SOURCES TO GET n`. A missing or empty file adds
+     NEXT REVISION, each bracketed marker in them written as "(details
+     missing)". Prints `SOURCES TO GET n`. A missing or empty file adds
      nothing.
 Every TEMPLATE NOTE paragraph is removed. Exit 0 on success, 2 on a bad input.
 """
@@ -185,6 +186,7 @@ def build(draft, template, figdir, out, to_get=None):
         doc.add_paragraph("SOURCES TO GET BEFORE THE NEXT REVISION",
                           style="Normal").runs[0].bold = True
         for g in get:
+            g = markers.BRACKET_RE.sub(" (details missing)", g).strip()
             add_runs(doc.add_paragraph(style="Normal"), g)
     print("SOURCES TO GET %d" % len(get))
     if prompts:

@@ -11,6 +11,6 @@ Run `python niac-repo/scripts/check_format.py` first and paste its printed outpu
 | F06 | Chart landscape one page | SCRIPT | chart_landscape and chart_margin_left, chart_margin_right, chart_margin_top, chart_margin_bottom all print PASS. | CRITICAL | SOL p.10 | 2027 A1 |
 | F07 | Chart font | SCRIPT | chart_font_arial12 prints PASS. | CRITICAL | SOL p.10 | 2027 A1 |
 | F08 | Chart 2x2 order | READ | The chart lists Innovation, Impact, Mission, Approach in that order, top left to bottom right. | MAJOR | SOL p.11 Figure 1 template (2027 template docx) | 2027 A1 |
-| F09 | Chart words | SCRIPT | chart_word_count prints PASS (200 to 360) and chart_word_schedule, chart_word_team, chart_word_cost, chart_see_refs all print PASS. | MAJOR | author rule | 2027 A1 |
+| F09 | Chart words | SCRIPT | chart_word_count prints PASS (180 to 360) and chart_word_schedule, chart_word_team, chart_word_cost, chart_see_refs all print PASS. | MAJOR | author rule | 2027 A1 |
 | F10 | No PI or institution on chart | READ | The chart text holds no person name and no institution name. Quote the title line. | CRITICAL | SOL p.10 | 2027 A1 |
 | W3 | Wholly new count | SCRIPT | Run `grep -o -i "wholly new" draft.md` and count the lines: 1 to 3, with one in the Mission section. | MAJOR | author rule | 2027 A1 |

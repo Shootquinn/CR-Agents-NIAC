@@ -20,7 +20,7 @@ Field 6 READ LIST (base {ROOT}/): `prompts/00_intake.md` `templates/intake_summa
 DATE STRING {DATE_STRING} in Field 4
 Field 7 CHECKLIST: 1) one row per field in the template. 2) one row per requirement in the template. 3) every row has a page cite or NOT FOUND. 4) weights line has 4 values. 5) status line reads {OPEN_CLOSED_RULE}, computed by comparison only. 6) early-warning line is derived from answer 6 and the status. 7) answer 5 is copied exactly.
 Field 8 REQUIRED HEADINGS: ## Files read; ## Fields; ## Weights line; ## Requirements; ## Status; ## Early warning; ## Verbatim answers; ## Checklist
-Field 9 MAX LINES 120, MAX WORDS 1200; TRUNCATED at item n rule
+Field 9 MAX LINES 150, MAX WORDS 1700; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
 
 ## Lit search
@@ -30,7 +30,7 @@ Field 3 PERSONA: method/personas/fact_checker.md
 Field 4 TASK: Find primary sources for the concept's technical claims per prompts/00c_lit_review.md. Use WebSearch and WebFetch. Gap search: search only these inputs: {GAP_INPUTS}.
 Field 5 FIXED CONTEXT: the Field 3 file
 Field 6 READ LIST (base {ROOT}/): `prompts/00c_lit_review.md` `cr_scratch/concept_notes.md` (when it exists; else `cr_scratch/intake_answers.md`) `cr_scratch/intake_summary.md`
-Field 7 CHECKLIST: 1) claims 10 or fewer, each 20 words or fewer. 2) sources 16 or fewer; a NIAC prior-art search ran. 3) each citation value seen on an opened page or [REFERENCE NEEDED]. 4) each url is full text or none. 5) no paper summary.
+Field 7 CHECKLIST: 1) claims 10 or fewer, each 20 words or fewer. 2) sources 16 or fewer; a NIAC prior-art search ran. 3) each citation value seen on an opened page or [REFERENCE NEEDED]. 4) each row has a url, or none only when no page was found. 5) no paper summary.
 Field 8 REQUIRED HEADINGS: ## Files read; ## Claims; ## Sources; ## Checklist
 Field 9 MAX LINES 60, MAX WORDS 1200; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template

@@ -28,7 +28,7 @@ Content
 5. The chart stands alone. It has no "see Section" and no "see Figure".
 6. Quadrant order: Innovation top left, Impact top right, Mission bottom left, Technical Approach bottom right.
 7. The title sits in a navy band. One central graphic sits at the crossing.
-8. Total words across all boxes: 200 to 240. Each box holds about 60 words at Arial 12 pt; scripts/check_format.py prints chart_box_overflow when a box is full. Count them and write the count in field 7.
+8. Total words across all boxes: 180 to 240. Each box holds about 60 words at Arial 12 pt; scripts/check_format.py prints chart_box_overflow when a box is full. Fit wins over count: to fix an overflow, move words to a box with room first, then shorten words, and stay at 180 or more. Count them and write the count in field 7.
 9. Innovation: 3 to 5 bullets, 45 to 60 words, with 1 or 2 quantified claims.
 10. Impact: 3 to 5 bullets, 40 to 55 words. Include one Earth or spin-off use.
 11. Mission: 3 to 5 bullets, 45 to 60 words. Name the representative mission (place, scale, platform).

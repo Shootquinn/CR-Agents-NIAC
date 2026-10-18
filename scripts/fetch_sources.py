@@ -10,7 +10,10 @@ Safe to rerun after a second Lit search: it adds to what is there.
    every search file (default: each cr_scratch/lit/search*.md). The S ids in
    a search file are local to it; a url or citation already saved in OUT is
    skipped (SEEN), and a new one gets the next free S number.
-2. Each url is downloaded (arXiv abs links become pdf links). PDF text comes
+   A row whose url is none gets one from its citation (an arXiv id, an NTRS
+   id, then a DOI).
+2. Each url is downloaded (arXiv abs links become pdf links, NTRS citation
+   pages become their PDF download). PDF text comes
    from pypdf; HTML has tags stripped. Full text means: a scholarly page (a
    DOI in the url, or a journal, archive or agency host) with 2,000 words or
    more, and an HTML one also needs two section words (introduction,
@@ -74,9 +77,27 @@ def scholarly(url):
         any(h in host or h in url.lower() for h in SCHOLARLY)
 
 
+def derive_url(cite, url):
+    """A row with no http url gets one from its citation: arXiv id, NTRS id, then DOI."""
+    if url.lower().startswith("http"):
+        return url
+    m = re.search(r"arXiv:\s*(\d{4}\.\d{4,5})", cite, re.I)
+    if m:
+        return "https://arxiv.org/pdf/" + m.group(1)
+    m = re.search(r"NTRS\s*(\d{8,})", cite, re.I)
+    if m:
+        return "https://ntrs.nasa.gov/citations/" + m.group(1)
+    m = re.search(r"\b(10\.\d{4,}/[^\s,;]+[^\s,;.)])", cite)
+    if m:
+        return "https://doi.org/" + m.group(1)
+    return url
+
+
 def fetch(url):
     """Return (text, minimum words) or raise."""
     url = re.sub(r"arxiv\.org/abs/([^\s?#]+)", r"arxiv.org/pdf/\1", url)
+    url = re.sub(r"ntrs\.nasa\.gov/citations/(\d+)\b.*",
+                 r"ntrs.nasa.gov/api/citations/\1/downloads/\1.pdf", url)
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (fetch_sources.py)"})
     with urllib.request.urlopen(req, timeout=45) as r:
         data = r.read(MAX_BYTES)
@@ -159,7 +180,8 @@ def main():
             if m:
                 ks = re.findall(r"K\d+", m.group(2))
                 served = "; ".join("%s %s" % (k, claims.get(k, "")) for k in ks).strip()
-                rows.append((m.group(1), m.group(3).strip(), m.group(4).strip(), served))
+                cite = m.group(3).strip()
+                rows.append((m.group(1), cite, derive_url(cite, m.group(4).strip()), served))
     for sid, cite, url, served in rows:
         if url in urls or norm(cite) in cites:
             seen += 1
