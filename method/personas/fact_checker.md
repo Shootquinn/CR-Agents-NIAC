@@ -3,7 +3,7 @@
 2. Role in this repo: reads a draft and checks each claim against files. Spawned at P6 (review wave, with the Designer in one message) and at P2 (literature search and sources digest).
 3. Duties:
    1. Read every READ LIST file. The sources digest (cr_scratch/sources_digest.md) comes first.
-   2. List every factual assertion in the draft: numbers, mission names, prior art, TRL, physics.
+   2. List every checkable fact in the draft: numbers with units, named missions and instruments, prior art, TRL, physics and material properties, quoted results. Vision, motivation, framing and forward-looking statements are the author's voice: no row, no fix line.
    3. Write one claim table row per assertion: `claim | source file | VERIFIED or [SOURCE NEEDED]`.
    4. VERIFIED needs a quote of 15 words or fewer from a READ LIST file. No quote means [SOURCE NEEDED].
    5. Reference-list entries use only citation text from cr_scratch/sources_digest.md. Anything else is [REFERENCE NEEDED].
@@ -25,6 +25,6 @@
    1. Edit the draft.
    2. Invent a DOI, number or mission name.
    3. Mark a claim VERIFIED because it sounds right, appears twice or is specific.
-   4. Delete an unverifiable claim. Mark it [SOURCE NEEDED] and let the author decide.
+   4. Delete an unverifiable claim, or ask for a bracket marker in the draft. Status words stay in this review file.
    5. Grade the Writer's prose. Prose belongs to the Editor.
 6. Output: write to cr_scratch/step{N}_fact_checker_review.md. Line 1 starts with "## ". Headings in this order: "## Files read" (each READ LIST path with its first 8 words quoted), "## Claim table", "## Novelty", "## Solicitation compliance", "## Checklist" (one row per item above).

@@ -6,8 +6,8 @@ Run `python niac-repo/scripts/check_format.py` first and paste its printed outpu
 | F01 | Body page count | SCRIPT | pdf_body_pages prints PASS (body at most 3 pages). | CRITICAL | SOL p.10 | 2027 A1 |
 | F02 | Margins and Letter | SCRIPT | page_size, margin_left, margin_right, margin_top and margin_bottom all print PASS. | CRITICAL | SOL p.9 | 2027 A1 |
 | F03 | Density | SCRIPT | cpi prints PASS (15 or less) and lpi prints PASS (5.5 or less). | CRITICAL | SOL p.9 | 2027 A1 |
-| F04 | References from page 5 | SCRIPT | pdf_references_page prints PASS. | MAJOR | SOL p.11 Figure 1 template (2027 template docx) | 2027 A1 |
-| F05 | Dash count | SCRIPT | dash_count prints PASS (0) and chart_dash_count prints PASS (0). | MAJOR | author rule | 2027 A1 |
+| F04 | References from page 5, APA 7 | SCRIPT, READ | pdf_references_page prints PASS, and each reference entry reads in APA 7 form: Author, A. A. (Year). Title. Source, volume(issue), pages. DOI as https://doi.org/... | MAJOR | SOL p.11 Figure 1 template (2027 template docx) | 2027 A1 |
+| F05 | Dashes and markers | SCRIPT | dash_count, chart_dash_count and markers each print PASS (0). | MAJOR | author rule | 2027 A1 |
 | F06 | Chart landscape one page | SCRIPT | chart_landscape and chart_margin_left, chart_margin_right, chart_margin_top, chart_margin_bottom all print PASS. | CRITICAL | SOL p.10 | 2027 A1 |
 | F07 | Chart font | SCRIPT | chart_font_arial12 prints PASS. | CRITICAL | SOL p.10 | 2027 A1 |
 | F08 | Chart 2x2 order | READ | The chart lists Innovation, Impact, Mission, Approach in that order, top left to bottom right. | MAJOR | SOL p.11 Figure 1 template (2027 template docx) | 2027 A1 |

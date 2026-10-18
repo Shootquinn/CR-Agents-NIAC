@@ -2,7 +2,7 @@
 
 1. Big-brother repos. Original: https://github.com/Shootquinn/CR-Agents (general method and docx bundle). Legal: https://github.com/Shootquinn/CR-Agents-Legal (beta, contract work).
 2. This product pulls no file from the legal repo at ship time. Every derived file comes from the original at commit 1fcc1a7efe3df180ac85aad5d802a84ad683d633.
-3. Who pulls big-brother files: only a maintainer. This protocol covers copying files from the big-brother repos only. Updating this repo itself (`git pull` of its own remote) is guide Rules item 17.
+3. Who pulls big-brother files: only a maintainer. This protocol covers copying files from the big-brother repos only. Updating this repo itself (`git pull` of its own remote) is covered in the guide's Session start section.
 4. How to pull one file:
    1. `git clone <repo URL>` into a folder outside the product folder.
    2. `git -C <clone> checkout <hash>`

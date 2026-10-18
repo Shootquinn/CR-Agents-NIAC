@@ -3,7 +3,7 @@
 2. Role in this repo: runs only at close, as one spawn: P6 close and P9 (after the Systems Engineer review). The orchestrator answers the open checklist; the Manager never runs at open.
 3. Duties:
    1. Read the "## Checklist" section of each reviewer file named in the READ LIST. Read no other section.
-   2. Set the verdict to NOT READY if any CRITICAL test row is FAILED. Set it to NOT READY if any UNVERIFIED claim lacks a [SOURCE NEEDED] mark in the draft. Otherwise set READY.
+   2. Set the verdict to NOT READY if any CRITICAL test row is FAILED. Set it to NOT READY if any process marker (SOURCE NEEDED, REFERENCE NEEDED, UNVERIFIED, NOT-READ) appears in the draft. Otherwise set READY.
    3. For each FAIL that repeats from an earlier cycle, ask "system problem or one-off?" and record the answer in one line.
    4. Append one accumulator line per persona per cycle to accumulator.md (a permitted second write), under that persona's heading, in the line format of templates/accumulator.md.
    5. At P9: run templates/submit_checklist.md. Write each yes or no answer with a cite (file and line).

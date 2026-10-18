@@ -218,6 +218,8 @@ def check_body(path):
     emit("PASS" if lpi <= 5.5 else "FAIL", "lpi", "%.2f" % lpi, "<=5.5")
     nd = sum(all_text(doc).count(c) for c in DASHES)
     emit("PASS" if nd == 0 else "FAIL", "dash_count", nd, "0")
+    nm = len(MARKER_RE.findall(all_text(doc)))
+    emit("PASS" if nm == 0 else "FAIL", "markers", nm, "0")
     emit("PASS" if fname and fsize else "WARN", "body_font",
          "%s %s pt" % (fname, fsize), "read from styles")
     low = imgs = 0
@@ -340,6 +342,10 @@ def pdf_pages(path):
     return None if info is None else [t for t, _, _ in info]
 
 
+# Process markers that must never reach the proposal.
+MARKER_RE = re.compile(r"SOURCE NEEDED|REFERENCE NEEDED|FIGURE UNVERIFIED|\bUNVERIFIED\b|NOT-READ")
+
+
 def check_pdf(path):
     import os
     info = pdf_info(path)
@@ -374,6 +380,8 @@ def check_pdf(path):
     mb = os.path.getsize(path) / 1048576.0
     emit("PASS" if mb < 20 else "FAIL", "pdf_size_mb", "%.2f" % mb, "<20")
     text = chr(10).join(pages)
+    nm = len(MARKER_RE.findall(text))
+    emit("PASS" if nm == 0 else "FAIL", "pdf_markers", nm, "0")
     ip = text.count("Image prompt:")
     emit("PASS" if ip == 0 else "FAIL", "pdf_image_prompt", ip, "0")
 

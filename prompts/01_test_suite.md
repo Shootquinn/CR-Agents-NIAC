@@ -17,8 +17,8 @@ The text contains no em dash and no en dash. [CHANGED: format rule]
 FOR EACH TEST, SPECIFY:
 - Test ID and name
 - Pass/fail criteria (be specific)
-- Priority: CRITICAL (must pass all) / MAJOR (must pass 90%+) / MINOR
-Priority meaning: CRITICAL must pass all, MAJOR must pass 90 percent, MINOR is advisory. [CHANGED: states each priority meaning as a rule]
+- Priority: CRITICAL (must pass all) / MAJOR (must pass 90%+) / MINOR / ADVISORY MINOR
+Priority meaning: CRITICAL must pass all, MAJOR must pass 90 percent, MINOR and ADVISORY MINOR are advisory. Keep each seed priority as written. [CHANGED: states each priority meaning as a rule]
 Write each test as one row: ID | group | text | priority. [CHANGED: fixed row form for small models]
 
 IMPORTANT FRAMING:

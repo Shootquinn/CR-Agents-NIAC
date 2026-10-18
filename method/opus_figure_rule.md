@@ -52,7 +52,7 @@ Output path: `cr_scratch/step{N}_opus_figure_{FIG_ID}.md`. After return, check t
 
 Caps: the product caps are 3 cycles and 14 spawns per step. Opus spawns are outside that count and capped at 4 per run. One Opus spawn per figure, run one at a time. Opus is never used in the review wave or on the proposal's own figures.
 
-A claim is VERIFIED only if the Opus verdict is SUPPORTED and every needed value is READ. Otherwise it gets [FIGURE UNVERIFIED].
+A claim is VERIFIED only if the Opus verdict is SUPPORTED and every needed value is READ. Otherwise its claim-table status is [FIGURE UNVERIFIED].
 
 ## Log
 
@@ -65,7 +65,7 @@ The gate file `step{N}_manager_gate.md` gets `## Unverified figures`: one line p
 Applies to answers 3, NO ANSWER, NEVER, CAP, FAILED. It also applies when the user declines or does not answer: the setting stays OFF.
 
 1. No Opus spawn for this figure.
-2. The Fact-Checker appends ` [FIGURE UNVERIFIED]` to each dependent claim sentence and sets the claim status to `[FIGURE UNVERIFIED]`.
+2. The Fact-Checker sets the claim status to `[FIGURE UNVERIFIED]` in her claim table. The draft carries no marker.
 3. The claim stays in the draft. The step continues.
 4. The log row gets the fallback reason.
 5. The claim is listed at the gate.

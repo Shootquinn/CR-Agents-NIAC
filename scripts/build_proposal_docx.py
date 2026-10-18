@@ -5,7 +5,11 @@ Usage: build_proposal_docx.py --draft cr_scratch/stepN_writer_draft.md
          --out cr_scratch/proposal_body.docx
          [--sources-to-get cr_scratch/sources_to_get.md]
 
-Draft: the text under the `## Draft` heading, up to the next `## ` heading.
+Draft: the text under the `## Draft` or `## Edited draft` heading, up to the
+next `## ` heading. Bracketed process markers ([SOURCE NEEDED],
+[REFERENCE NEEDED], [FIGURE UNVERIFIED], [UNVERIFIED], [NOT-READ]) are
+stripped; prints `STRIPPED MARKERS n`. A bare marker word stays, and
+check_format.py fails it.
   1. Plain paragraphs separated by blank lines. Run-in labels `**Label.**`
      become bold.
   2. `# text` is the Title; `### text` is Heading 1; `#### text` is Heading 2.
@@ -46,7 +50,7 @@ def draft_lines(path):
         if ln.startswith("## "):
             if on:
                 break
-            on = ln.strip().lower() == "## draft"
+            on = ln.strip().lower() in ("## draft", "## edited draft")
             continue
         if on:
             out.append(ln.rstrip())
@@ -84,6 +88,9 @@ def add_picture(doc, path, text_w):
     p.add_run().add_picture(path, width=Inches(w), height=Inches(h))
 
 
+MARKER_RE = re.compile(r"\s*\[(?:SOURCE NEEDED|REFERENCE NEEDED|FIGURE UNVERIFIED|UNVERIFIED|NOT-READ)[^\]]*\]")
+
+
 def to_get_lines(path):
     if not path or not os.path.exists(path):
         return []
@@ -97,6 +104,9 @@ def to_get_lines(path):
 
 def build(draft, template, figdir, out, to_get=None):
     lines = draft_lines(draft)
+    stripped = sum(len(MARKER_RE.findall(x)) for x in lines)
+    lines = [MARKER_RE.sub("", x) for x in lines]
+    print("STRIPPED MARKERS %d" % stripped)
     if not any(x.strip() for x in lines):
         print("NO DRAFT TEXT under ## Draft in %s" % draft)
         return 2
