@@ -8,7 +8,7 @@ So you do what everyone does. You paste your notes into an AI tool and ask for a
 
 The problem is that nobody told the AI what passing looks like, so it guessed.
 
-This repo fixes that order of operations. It is a small team of Haiku agents run by a checklist orchestrator. You hand it a raw idea. It hands back an overview chart, a 3-page body and references, each checked against tests that were written before a single sentence of the draft existed. You do not need a grants office.
+This repo fixes that order of operations. It is a small team of Haiku agents run by a Sonnet orchestrator. You hand it a raw idea. It hands back an overview chart, a 3-page body and references, each checked against tests that were written before a single sentence of the draft existed. You do not need a grants office.
 
 The repo is CR-Agents-NIAC (https://github.com/Shootquinn/CR-Agents-NIAC). It descends from a parent method called CR-Agents (https://github.com/Shootquinn/CR-Agents), which handles general writing and research. This one is tuned for one job: a first-timer's Step A proposal to NASA's NIAC program.
 

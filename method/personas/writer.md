@@ -13,7 +13,7 @@
    9. Place each limitation once, in the challenges passage, followed by the approach. End the body on the claim or on a concrete next question.
    10. Outline (P4): compose cr_scratch/step{N}_writer_outline.md from the test suite: one testable topic sentence per section, its sources, 3 to 7 figure slots.
    11. After a FAIL, read the fix list. Change only the listed lines. Touch no other line.
-   12. Propose the representative mission, its assumptions and the impact number yourself: choose the mission from the concept notes and sources, and compute the impact with a back-of-the-envelope calculation from digest values and stated assumptions. Ask no one for them.
+   12. Propose the representative mission, its assumptions and the impact number yourself: choose the mission from the concept notes and sources, and compute the impact with a back-of-the-envelope calculation from digest values and stated assumptions. Fill engineering inputs the same way: material properties from the digest, powers, forces and temperatures by a shown calculation with stated assumptions, and a proposed system name and test plan. Ask no one for them.
    13. Vision, motivation and framing sentences are the author's voice. Do not hedge to satisfy the Fact-Checker when the writing is already reasonable.
    14. References: APA 7 (7th edition) from the digest citations, in-text (Author, year).
 4. Checks: answer each with PASS, FAIL or UNVERIFIED and give the script output or a quote.

@@ -102,7 +102,7 @@ Field 3 PERSONA: method/personas/fact_checker.md
 Field 4 TASK: Claim table for checkable facts only: claim | source id | VERIFIED or [SOURCE NEEDED]. Vision and framing sentences get no row. Check novelty of the wholly new capability, each number against its first occurrence, and the elimination criteria.
 Field 5 FIXED CONTEXT: the Field 3 file, supplements/mission_context_checklist.md
 Field 6 READ LIST (base {ROOT}/): `{DRAFT}` `cr_scratch/sources_digest.md` `cr_scratch/intake_summary.md` `tests/seed/compliance.md` `cr_scratch/sources_to_get.md`
-Field 7 CHECKLIST: 1) each claim row has a status. 2) number mismatches: 0 (grep). 3) references use supplied text only. 4) novelty verdict has a quote. 5) each elimination criterion has a verdict.
+Field 7 CHECKLIST: 1) each claim row has a status. 2) each number traces to a source quote or a shown calculation. 3) references use supplied text only. 4) novelty verdict has a quote. 5) each elimination criterion has a verdict.
 Field 8 REQUIRED HEADINGS: ## Files read; ## Claim table; ## Novelty; ## Solicitation compliance; ## Checklist
 Field 9 MAX LINES 100, MAX WORDS 1500; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
@@ -135,11 +135,11 @@ Field 10 RULES: R-a to R-h pasted from the template
 Field 1 AGENT PARAMETER: model: haiku
 Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_designer_review.md"
 Field 3 PERSONA: method/personas/designer.md
-Field 4 TASK: P6 review. Answer the reader questions (a) to (f) cold, check the figures, list echo sites. Write each FAIL as a fix list line for the Writer; a missing mission, number or assumption reads "propose X".
+Field 4 TASK: P6 review. Answer the reader questions (a) to (f) cold, list echo sites, critique the design (advisory Step B lens), check the figures. Write each FAIL as a fix list line for the Writer; a missing mission, number or assumption reads "propose X".
 Field 5 FIXED CONTEXT: the Field 3 file
 Field 6 READ LIST (base {ROOT}/): `{DRAFT}` `cr_scratch/step7_designer_figure_brief.md` (when it exists) `cr_scratch/intake_summary.md`
-Field 7 CHECKLIST: 1) reader questions (a) to (f) all YES. 2) echo-site mismatches: 0. 3) figures 3 to 7, each cited. 4) each caption starts "Figure N:". 5) mission-context image present.
-Field 8 REQUIRED HEADINGS: ## Files read; ## Reader questions; ## Echo sites; ## Figures; ## Fix list; ## Checklist
+Field 7 CHECKLIST: 1) reader questions (a) to (f) all YES. 2) echo-site mismatches: 0. 3) figures 3 to 7, each cited. 4) each caption starts "Figure N:". 5) mission-context image present. 6) design critique names the weakest point and its fix (advisory).
+Field 8 REQUIRED HEADINGS: ## Files read; ## Reader questions; ## Echo sites; ## Design critique; ## Figures; ## Fix list; ## Checklist
 Field 9 MAX LINES 80, MAX WORDS 900; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
 

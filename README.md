@@ -16,11 +16,11 @@ It helps you write one thing: the 3-page NIAC Phase I Step A proposal. The outpu
 
 ## How it runs
 
-This is designed to run in Claude Code in a terminal, using spawned light-weight Haiku agents so it can work with the $20 Claude plan.
+This is designed to run in Claude Code in a terminal, using spawned light-weight Haiku agents so it can work with the $20 Claude plan. Run the orchestrator (your main session) on Sonnet: type `/model sonnet` before you start. A Haiku orchestrator works too, but needs more steering.
 
 It runs its own literature review. Agents search for primary sources, download the full text where it is open, and summarize only what they read in full. Any paper they could not get goes, with a full citation, on a SOURCES TO GET BEFORE THE NEXT REVISION list at the end of your References page. Delete that list before you upload.
 
-Haiku cannot read figure details reliably. Bar heights, plotted points and small print in chart images are marked NOT-READ, and any claim that leans on them is marked [FIGURE UNVERIFIED]. Opus figure analysis is default off and runs only when you authorize it, per method/opus_figure_rule.md.
+Haiku cannot read figure details reliably. Bar heights, plotted points and small print in chart images are marked NOT-READ, and any claim that leans on them is flagged in the Fact-Checker's review. Opus figure analysis is default off and runs only when you authorize it, per method/opus_figure_rule.md.
 
 ## Requirements
 
