@@ -4,7 +4,7 @@ This is not a NASA site. This is not a NASA product. It has nothing to do with N
 
 ## What this repo does
 
-It helps you write one thing: the 3-page NIAC Phase I Step A proposal. The output is three parts: an overview chart, a 3-page body, and references. It does not write Step B. It does not write your idea for you. Bring a concept, or ask for orientation and it will help you find one.
+It helps you write one thing: the 3-page NIAC Phase I Step A proposal. The output is three parts: an overview chart, a 3-page body, and references, saved in `proposal/`. Before a work order your idea is a bar-napkin sketch; the work order is its first step to a preliminary idea, and the Step A and then Step B proposals are its initial TRL 1 definition. So the proposal claims entry TRL 1 and leans on the heritage technologies it builds on for credibility. It does not write Step B. It does not write your idea for you. Bring a concept, or ask for orientation and it will help you find one.
 
 ## Quick start
 
@@ -57,6 +57,7 @@ A file called prompt0 is included to help orient Claude with what you have insta
 11. `cr_scratch/`: working notes and logs, created during a run.
 12. `PROVENANCE.md`: where each derived file came from.
 13. `prompt0.md`: first-session tool checks and Windows setup.
+14. `proposal/`: the files you submit (chart, body docx, PDF), created during a run.
 
 ## Big brothers
 

@@ -17,7 +17,7 @@
 | S13 | technical: numbers agree | Every stated total equals the sum of its stated parts, and every stated rate matches its stated durations. | MAJOR | blog sizzle third | 2027 A1 |
 | S14 | technical: largest risk | One sentence names the largest risk and one mitigation. | MAJOR | blog sizzle third | 2027 A1 |
 | S15 | technical: citations resolve | Every in-text (Name, year) citation has a matching reference entry. | MAJOR | blog sizzle third | 2027 A1 |
-| S16 | technical: sources for constants | Each physical constant or environment value (flux, pressure, temperature) is followed by a citation or a stated assumption. | MINOR | blog sizzle third | 2027 A1 |
+| S16 | technical: sources for constants | Each physical constant or environment value (flux, pressure, temperature) has a citation, is stated as a design value, or appears in the Assumptions sentence. FAIL when an inline "(assumed)" tag stands in for any of these. | MINOR | blog sizzle third | 2027 A1 |
 | S17 | gamesmanship: memorable name | The concept has a name of four words or fewer, used at least 3 times. | MAJOR | blog sizzle third | 2027 A1 |
 | S18 | gamesmanship: no stock opener | The first sentence does not start with In recent years, Space exploration has, or Throughout history. | MINOR | blog sizzle third | 2027 A1 |
 | S19 | gamesmanship: why now | One sentence names a recent change that makes the concept possible now. | MAJOR | blog sizzle third | 2027 A1 |

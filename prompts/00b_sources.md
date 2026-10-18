@@ -16,7 +16,7 @@ Digest section:
 Row format:
 1. Citation cell: `author=<text>; year=<text>; title=<text>; doi=<text>`. Copy each value character for character from the file: its `Citation:` line first, then its title page.
 2. An absent value reads `[REFERENCE NEEDED]`.
-3. Claims cell: exactly three quotes in straight double quotes, each copied from the source file, 25 words or fewer each, separated by ` / `. Pick the quotes that bear on the concept's claims.
+3. Claims cell: for each K id on the file's `Claims:` line, up to three quotes that bear on that claim, written `K1: "quote" / "quote"`, then ` ; ` before the next K id. Each quote is copied from the source file, 25 words or fewer, in straight double quotes. Prefer quotes holding a number with its unit. A file whose Claims line reads none gets three quotes that bear on the concept.
 4. Figure flag cell: Y or N.
 
 Rules:
@@ -31,6 +31,6 @@ Open items: list each `[REFERENCE NEEDED]` with its row id.
 Checklist items:
 1. One row per source.
 2. Each citation value is in its file (grep count).
-3. Each row has 3 quoted claims.
+3. Each K id on a file's Claims line has 1 to 3 quotes (none: 3 quotes).
 4. Each flag is Y or N.
 5. Absent values read [REFERENCE NEEDED].

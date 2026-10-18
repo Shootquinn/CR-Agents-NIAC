@@ -2,16 +2,17 @@
 
 Usage: build_proposal_docx.py --draft cr_scratch/stepN_writer_draft.md
          --template templates/proposal_template.docx --figures figures
-         --out cr_scratch/proposal_body.docx
+         --out proposal/proposal_body.docx
          [--sources-to-get cr_scratch/sources_to_get.md]
 
 Draft: the text under the `## Draft` or `## Edited draft` heading, up to the
-next `## ` heading. Bracketed process markers ([SOURCE NEEDED],
-[REFERENCE NEEDED], [FIGURE UNVERIFIED], [UNVERIFIED], [NOT-READ]) are
-stripped; prints `STRIPPED MARKERS n`. A bare marker word stays, and
-check_format.py fails it.
-  1. Plain paragraphs separated by blank lines. Run-in labels `**Label.**`
-     become bold.
+next `## ` heading. Bracketed process markers (scripts/markers.py) are
+stripped and a line holding only a file path is dropped; prints
+`STRIPPED MARKERS n` and `DROPPED PATH LINES n`. Any other process text
+stays, and check_format.py fails it.
+  1. Plain paragraphs separated by blank lines. Each body paragraph starts
+     with a tab character (not headings, captions, references). Run-in
+     labels `**Label.**` become bold.
   2. `# text` is the Title; `### text` is Heading 1; `#### text` is Heading 2.
   3. `Figure N: caption.` is a figure. An optional `Image prompt: ...` line
      after it is removed from the document and written to FIGURES/prompts/NN.txt.
@@ -36,6 +37,9 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 con
 
 import docx
 from docx.shared import Inches
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import markers
 
 MAX_H = 2.5
 FIG_RE = re.compile(r"^Figure\s+(\d+)\s*:\s*(.*)$")
@@ -88,9 +92,6 @@ def add_picture(doc, path, text_w):
     p.add_run().add_picture(path, width=Inches(w), height=Inches(h))
 
 
-MARKER_RE = re.compile(r"\s*\[(?:SOURCE NEEDED|REFERENCE NEEDED|FIGURE UNVERIFIED|UNVERIFIED|NOT-READ)[^\]]*\]")
-
-
 def to_get_lines(path):
     if not path or not os.path.exists(path):
         return []
@@ -104,9 +105,12 @@ def to_get_lines(path):
 
 def build(draft, template, figdir, out, to_get=None):
     lines = draft_lines(draft)
-    stripped = sum(len(MARKER_RE.findall(x)) for x in lines)
-    lines = [MARKER_RE.sub("", x) for x in lines]
-    print("STRIPPED MARKERS %d" % stripped)
+    paths = sum(1 for x in lines if markers.is_path_line(x))
+    lines = [x for x in lines if not markers.is_path_line(x)]
+    pairs = [markers.strip_brackets(x) for x in lines]
+    lines = [x for x, _ in pairs]
+    print("STRIPPED MARKERS %d" % sum(n for _, n in pairs))
+    print("DROPPED PATH LINES %d" % paths)
     if not any(x.strip() for x in lines):
         print("NO DRAFT TEXT under ## Draft in %s" % draft)
         return 2
@@ -122,7 +126,7 @@ def build(draft, template, figdir, out, to_get=None):
 
     def flush():
         if para:
-            add_runs(doc.add_paragraph(style="Normal"), " ".join(para))
+            add_runs(doc.add_paragraph(style="Normal"), "	" + " ".join(para))
             para.clear()
 
     for ln in lines:

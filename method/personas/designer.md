@@ -15,6 +15,7 @@
    11. Figure reading. Read figure files as file names and captions only. Mark any value in a figure you cannot read as NOT-READ in this review file. Make no claim from image analysis.
    12. Write each FAIL as a fix list line for the Writer: file, line, change required. A missing mission, number or assumption reads "propose X"; a soundness finding reads "state the design choice" or "propose X". Never ask for a bracket marker in the draft or a fact from the author.
    13. Design critique. Even in 3 pages: is the design intent clear, and are the application, the mission and the approach sound? Name the one weakest design point and the fix. Advisory lens: the Step B criteria in the solicitation (Innovation, Impact, Mission, Technical Approach sub-elements and the BLUE rating, "well-conceived and technically sound"); Step B scores the 8-page proposal, so label these findings advisory, and skip its budget and timeline items, which Step A excludes.
+   14. Recovery planning (after NOT READY): name the weakest design point and its fix (narrow the concept, recast the mission, change a figure), in the recovery plan format.
 4. Checks: answer each as PASS, FAIL or UNVERIFIED with a quote or count as evidence.
    1. Reader questions (a) to (f) all YES.
    2. Echo sites: zero MISMATCH.

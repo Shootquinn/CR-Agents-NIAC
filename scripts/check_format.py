@@ -22,21 +22,32 @@ cpi = characters including spaces per body line / text width in inches,
       linearly (11 pt = 16.4 cpi, 10 pt = 18.0 cpi). Partial last lines
       count as lines, so a paragraph set at 12 pt reads slightly under 15.
       Result = total characters / total estimated lines / text width.
-      Non-Times fonts are not re-measured; the same table is used.
+      Garamond has its own table, measured from GARA.TTF: it averages 3.2%
+      narrower than Times. Any other font uses the Times table.
+cpi_full_line = the same text set as one solid line: characters / total
+      measured width. Times 12 pt prose reads about 15.0 and Garamond
+      12 pt about 15.5. WARN above 15: a reviewer measuring a full line
+      may count it over the limit.
 lpi = lines per page / text height in inches. Each estimated line is
-      font size * 1.15 pt for single spacing (Times line height), the
+      font size * 1.15 pt for single spacing (Times line height; Garamond
+      1.17), the
       exact value for "exactly" spacing, font size * 1.15 * multiple for
       multiple spacing; paragraph space before and after is added per
       paragraph. lpi = total lines / total vertical points * 72.
 Both values are approximations for a Word render; the PDF is the final
 authority.
+body_tab: every body paragraph (not a heading, caption, reference or
+      figure line) starts with a tab character.
+markers / pdf_markers: process text defined in scripts/markers.py.
 """
+import os
 import re
 import sys
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import markers
 
 DASHES = "\u2014\u2013"
-LINE_FACTOR = 1.15
 
 # Times-like advance widths in em (approximate Times New Roman).
 _W = {" ": .25, "a": .444, "b": .5, "c": .444, "d": .5, "e": .444, "f": .333,
@@ -61,9 +72,35 @@ _REF = ("The quick brown fox jumps over the lazy dog while the system "
 _RAW = sum(_W.get(c, .5) for c in _REF) / len(_REF)
 _K = 0.40 / _RAW
 
+# Garamond (GARA.TTF hmtx), in em, scaled by its measured ratio to Times on _REF.
+_G = {" ": .25, "a": .406, "b": .51, "c": .417, "d": .5, "e": .417, "f": .323,
+      "g": .448, "h": .51, "i": .229, "j": .229, "k": .469, "l": .229, "m": .771,
+      "n": .51, "o": .51, "p": .51, "q": .49, "r": .333, "s": .365, "t": .292,
+      "u": .49, "v": .469, "w": .667, "x": .458, "y": .417, "z": .427,
+      ",": .219, ".": .219, ";": .219, ":": .219, "-": .312, "(": .292,
+      ")": .292, "'": .177, '"': .406, "/": .5, "%": .823, "&": .729,
+      "A": .677, "B": .615, "C": .635, "D": .771, "E": .656, "F": .562,
+      "G": .771, "H": .76, "I": .354, "J": .333, "K": .74, "L": .573,
+      "M": .833, "N": .771, "O": .781, "P": .562, "Q": .771, "R": .625,
+      "S": .479, "T": .615, "U": .708, "V": .677, "W": .885, "X": .698,
+      "Y": .656, "Z": .656}
+for _c in "0123456789":
+    _G[_c] = .469
+_KG = 0.40 * 0.9677 / (sum(_G.get(c, .5) for c in _REF) / len(_REF))
+FONT = {"table": _W, "k": _K, "line": 1.15}
+
+
+def set_font(name):
+    """Pick the width table and line factor for the body font."""
+    if "garamond" in (name or "").lower():
+        FONT.update(table=_G, k=_KG, line=1.17)
+    else:
+        FONT.update(table=_W, k=_K, line=1.15)
+
 
 def cw(c):
-    return _W.get(c, _W.get(c.lower(), .5)) * _K
+    t = FONT["table"]
+    return t.get(c, t.get(c.lower(), .5)) * FONT["k"]
 
 
 def word_w(word, size):
@@ -73,7 +110,7 @@ def word_w(word, size):
 def est_lines(text, size, width_in):
     space = cw(" ") * size / 72.0
     lines, cur = 1, 0.0
-    for w in text.split(" "):
+    for w in text.replace("\t", " ").split(" "):
         ww = word_w(w, size)
         if cur == 0.0:
             cur = ww
@@ -154,11 +191,11 @@ def para_metrics(p, dsize):
     if ls is None:
         ls = style_attr(st, lambda s: s.paragraph_format.line_spacing)
     if ls is None:
-        line_h = size * LINE_FACTOR
+        line_h = size * FONT["line"]
     elif hasattr(ls, "pt"):
         line_h = ls.pt
     else:
-        line_h = size * LINE_FACTOR * float(ls)
+        line_h = size * FONT["line"] * float(ls)
     sb = pf.space_before
     if sb is None:
         sb = style_attr(st, lambda s: s.paragraph_format.space_before)
@@ -171,6 +208,20 @@ def para_metrics(p, dsize):
 def is_body(p):
     n = ((p.style.name if p.style is not None else "") or "").lower()
     return p.text.strip() and not (n.startswith("heading") or n == "title")
+
+
+def body_paras(doc):
+    """Normal-style prose paragraphs before the References heading."""
+    out = []
+    for p in doc.paragraphs:
+        n = ((p.style.name if p.style is not None else "") or "").lower()
+        s = p.text.strip()
+        if n == "references" or re.match(r"^references$", s, re.I):
+            break
+        if (n == "normal" and s and not s.startswith(("[FIGURE", "Figure "))
+                and not s.startswith("SOURCES TO GET")):
+            out.append(p)
+    return out
 
 
 def all_text(doc):
@@ -199,6 +250,7 @@ def check_body(path):
         emit("PASS" if v >= 0.995 else "FAIL", "margin_" + nm,
              "%.2f" % v, ">=1.0")
     fname, fsize = body_font(doc)
+    set_font(fname)
     text_w = w - emu_in(sec.left_margin) - emu_in(sec.right_margin)
     chars = lines = all_lines = 0
     height = 0.0
@@ -214,12 +266,21 @@ def check_body(path):
         height += n * line_h + sb + sa
     cpi = chars / float(lines) / text_w if lines else 0.0
     lpi = all_lines / (height / 72.0) if height else 0.0
-    emit("PASS" if cpi <= 15.0 else "FAIL", "cpi", "%.2f" % cpi, "<=15")
+    emit("PASS" if cpi <= 15.0 else "FAIL", "cpi", "%.2f (%s)" % (cpi, fname), "<=15")
+    body_txt = "".join(p.text for p in doc.paragraphs if is_body(p))
+    full_w = sum(word_w(c, fsize or 12.0) for c in body_txt)
+    full = len(body_txt) / full_w if full_w else 0.0
+    emit("PASS" if full <= 15.0 else "WARN", "cpi_full_line", "%.2f (%s)" % (full, fname), "<=15")
     emit("PASS" if lpi <= 5.5 else "FAIL", "lpi", "%.2f" % lpi, "<=5.5")
     nd = sum(all_text(doc).count(c) for c in DASHES)
     emit("PASS" if nd == 0 else "FAIL", "dash_count", nd, "0")
-    nm = len(MARKER_RE.findall(all_text(doc)))
-    emit("PASS" if nm == 0 else "FAIL", "markers", nm, "0")
+    hits = markers.find(all_text(doc))
+    emit("PASS" if not hits else "FAIL", "markers", "%d %s" % (
+        len(hits), "; ".join(t for _, t in hits[:5])), "0")
+    bp = body_paras(doc)
+    notab = [p.text.strip()[:30] for p in bp if not p.text.startswith("\t")]
+    emit("PASS" if not notab else "FAIL", "body_tab", "%d of %d paragraphs lack a tab%s" % (
+        len(notab), len(bp), (" (" + notab[0] + ")") if notab else ""), "0")
     emit("PASS" if fname and fsize else "WARN", "body_font",
          "%s %s pt" % (fname, fsize), "read from styles")
     low = imgs = 0
@@ -242,7 +303,7 @@ def check_body(path):
 
 STYLE_WANT = (("Normal", 12.0), ("Title", 12.0), ("Heading 1", 12.0),
               ("Heading 2", 12.0), ("Caption", 10.0))
-TNR = "times new roman"
+BODY_FONTS = ("times new roman", "garamond")  # Garamond: user's late-stage choice
 
 
 def default_para_spacing(doc):
@@ -289,15 +350,15 @@ def check_styles(doc):
         key = "style_" + name.lower().replace(" ", "_")
         r = style_readback(doc, name)
         if r is None:
-            emit("FAIL", key, "missing", "TNR %g pt 0/4 single" % want)
+            emit("FAIL", key, "missing", "TNR or Garamond %g pt 0/4 single" % want)
             continue
         fname, size, before, after, single, lval = r
-        ok = ((fname or "").lower() == TNR and size == want
+        ok = ((fname or "").lower() in BODY_FONTS and size == want
               and abs(before) < 0.01 and abs(after - 4.0) < 0.01 and single)
         emit("PASS" if ok else "FAIL", key,
              "%s %s pt before %.1f after %.1f line %s" % (
                  fname, size, before, after, lval),
-             "TNR %g pt 0/4 single" % want)
+             "TNR or Garamond %g pt 0/4 single" % want)
 
 
 def check_figures(doc, path):
@@ -306,8 +367,9 @@ def check_figures(doc, path):
     root = etree.fromstring(zipfile.ZipFile(path).read("word/document.xml"))
     anchors = len(list(root.iter("{*}anchor")))
     inline = len(list(root.iter("{*}inline")))
-    emit("PASS" if anchors == 0 else "FAIL", "figure_inline",
-         "%d inline %d floating" % (inline, anchors), "0 floating")
+    # Floating (wrapped) figures are a user's late-stage space saver: WARN only.
+    emit("PASS" if anchors == 0 else "WARN", "figure_inline",
+         "%d inline %d floating" % (inline, anchors), "floating is user-placed")
     txt = all_text(doc)
     miss = txt.count("[FIGURE")
     emit("PASS" if miss == 0 else "FAIL", "image_missing", miss, "0")
@@ -340,10 +402,6 @@ def pdf_info(path):
 def pdf_pages(path):
     info = pdf_info(path)
     return None if info is None else [t for t, _, _ in info]
-
-
-# Process markers that must never reach the proposal.
-MARKER_RE = re.compile(r"SOURCE NEEDED|REFERENCE NEEDED|FIGURE UNVERIFIED|\bUNVERIFIED\b|NOT-READ")
 
 
 def check_pdf(path):
@@ -380,8 +438,9 @@ def check_pdf(path):
     mb = os.path.getsize(path) / 1048576.0
     emit("PASS" if mb < 20 else "FAIL", "pdf_size_mb", "%.2f" % mb, "<20")
     text = chr(10).join(pages)
-    nm = len(MARKER_RE.findall(text))
-    emit("PASS" if nm == 0 else "FAIL", "pdf_markers", nm, "0")
+    hits = markers.find(text)
+    emit("PASS" if not hits else "FAIL", "pdf_markers", "%d %s" % (
+        len(hits), "; ".join(t for _, t in hits[:5])), "0")
     ip = text.count("Image prompt:")
     emit("PASS" if ip == 0 else "FAIL", "pdf_image_prompt", ip, "0")
 
@@ -584,8 +643,9 @@ def box_geometry(box):
 
 
 def box_text_height(box, sm, width_pt):
-    """Estimated text height in points: Arial average char width 0.5 em,
-    line height 1.15 x size, plus paragraph spacing."""
+    """Estimated text height in points: Arial widths measured from
+    arial.ttf (0.48 em per letter, 0.278 em per space), line height
+    1.15 x size, plus paragraph spacing."""
     total = 0.0
     for p in box.findall(W_NS + "p"):
         runs = [r for r in p.iter(W_NS + "r")]
@@ -606,14 +666,14 @@ def box_text_height(box, sm, width_pt):
                 before = int(sp.get(W_NS + "before") or 0) / 20.0
                 after = int(sp.get(W_NS + "after") or 0) / 20.0
         avail = max(width_pt - indent, size)
-        cw = 0.5 * size
+        cw, sp = 0.48 * size, 0.278 * size
         lines, cur = 1, 0.0
         for wd in text.split():
             ww = len(wd) * cw
             if cur == 0.0:
                 cur = ww
-            elif cur + cw + ww <= avail:
-                cur += cw + ww
+            elif cur + sp + ww <= avail:
+                cur += sp + ww
             else:
                 lines += 1
                 cur = ww
@@ -622,7 +682,9 @@ def box_text_height(box, sm, width_pt):
 
 
 def check_box_overflow(root, sm):
-    over, n = [], 0
+    """FAIL when the estimate exceeds the box by more than 10%; WARN (look
+    at the rendered chart) when it exceeds it by up to 10%."""
+    over, near, n = [], [], 0
     for box in root.iter(W_NS + "txbxContent"):
         if in_fallback(box):
             continue
@@ -633,12 +695,18 @@ def check_box_overflow(root, sm):
         n += 1
         have = (hemu - ti - bi) / 12700.0
         need = box_text_height(box, sm, (wemu - li - ri) / 12700.0)
-        if need > have:
-            over.append("%s need %.2fin have %.2fin" % (
-                name, need / 72.0, have / 72.0))
-    emit("FAIL" if over else "PASS", "chart_box_overflow",
-         "; ".join(over) if over else "0 of %d boxes over" % n,
-         "text height <= box height")
+        note = "%s need %.2fin have %.2fin" % (name, need / 72.0, have / 72.0)
+        if need > have * 1.10:
+            over.append(note)
+        elif need > have:
+            near.append(note)
+    if over:
+        emit("FAIL", "chart_box_overflow", "; ".join(over + near), "text height <= box height")
+    elif near:
+        emit("WARN", "chart_box_overflow", "; ".join(near) + " (view the render)",
+             "text height <= box height")
+    else:
+        emit("PASS", "chart_box_overflow", "0 of %d boxes over" % n, "text height <= box height")
 
 
 def check_chart(path):

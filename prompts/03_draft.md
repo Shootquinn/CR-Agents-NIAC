@@ -2,7 +2,7 @@
 Read cr_scratch/intake_summary.md, cr_scratch/sources_digest.md, the outline file and the test suite file. [CHANGED: product input files replace chat context]
 The NASA solicitation governs over any advice and overrides any value here. [CHANGED: product rule, solicitation has final authority]
 Write the three-page proposal. [CHANGED: output goes to the docx path]
-Include a references page in APA 7 (7th edition) and use (Author, year) in-text citations. [CHANGED: names the citation style]
+Include a references page in APA 7 (7th edition) and use (Author, year) in-text citations, never a file name or line number. [CHANGED: names the citation style]
 Build the docx with the commands in the guide section "Docx" of method/operational_guide.md. [CHANGED: product builds docx with scripted commands]
 Write the draft text to cr_scratch/step{N}_writer_draft.md for the build. [CHANGED: output is a file in cr_scratch named by the catalog]
 The text contains no em dash and no en dash. [CHANGED: format rule]
@@ -14,6 +14,7 @@ Spacing should be "single" with 4 pt after and 0 pt before for all styles, inclu
 All title and heading styles should use 12 point font.
 Keep each unsourced claim as plain prose and list it under Open items with its line number. The draft holds no bracket marker. [CHANGED: markers stay out of the proposal]
 Propose the representative mission and compute the impact number yourself from the sources and stated assumptions. [CHANGED: the team proposes, the author decides]
+State the entry TRL (usually 1) and the heritage technologies the concept builds on. Put mission-context assumptions in one "Assumptions:" sentence and state design values as the design point, with no inline "(assumed)" tags. [CHANGED: author rules on TRL and hedging]
 Figure rule: write the caption as "Figure N: <caption>." and on the next line "Image prompt: <laconic prompt>" for a figure that code cannot draw, per the guide section "Figures". [CHANGED: figure form from the guide]
 
 Don't forget to do your overview chart. It'll take hours! It's also the only place you can put in work plan / team / budget data since none of that is requested in the proposal body at this juncture (although I always try to put at least a sentence about work to be done in the proposal).

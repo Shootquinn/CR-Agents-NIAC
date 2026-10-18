@@ -1,5 +1,5 @@
 ## Literature search
-Input: `cr_scratch/concept_notes.md` (or answer 4 in `cr_scratch/intake_answers.md`) and `cr_scratch/intake_summary.md`. Output file: `cr_scratch/lit/search.md`.
+Input: `cr_scratch/concept_notes.md` (or answer 4 in `cr_scratch/intake_answers.md`) and `cr_scratch/intake_summary.md`. Output file: `cr_scratch/lit/search.md`; a second search (gap search) writes `cr_scratch/lit/search_2.md` and searches only the inputs it is given.
 
 Output headings, in order:
 1. ## Files read

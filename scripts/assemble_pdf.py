@@ -1,7 +1,7 @@
 """assemble_pdf.py - merge the overview chart and the proposal body into one PDF.
 
-Usage: assemble_pdf.py --chart cr_scratch/overview_chart.docx
-         --body cr_scratch/proposal_body.docx --out cr_scratch/proposal_stepA.pdf
+Usage: assemble_pdf.py --chart proposal/overview_chart.docx
+         --body proposal/proposal_body.docx --out proposal/proposal_stepA.pdf
 
 Converts both files with LibreOffice headless into a temp folder, merges the
 chart first and the body second, prints the page count and the size in MB, and

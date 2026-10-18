@@ -15,13 +15,13 @@ Source governs: the current NASA solicitation. Regenerate this file at intake wh
 | C10 | One named mission | Exactly one representative mission is named and given an architecture. Other missions appear only under a label such as extension. | MAJOR | SOL p.9 | 2027 A1 |
 | C11 | SWaP estimate | The body states mass (kg or g), power (W) and size or volume (m or m3) for the mission system. | MINOR | FAQ Q57 | 2027 A1 |
 | C12 | Implementation path | The draft describes at least one path from the concept to a flown system in two or more ordered steps. | MAJOR | SOL p.8 | 2027 A1 |
-| C13 | Entry TRL | The body contains the string TRL followed by 1 or 2 as the entry level. FAIL when TRL is absent. | MAJOR | SOL p.8 | 2027 A1 |
-| C14 | Phase I objectives | The body lists at least three top-level Phase I objectives, each on its own line or numbered. | MAJOR | SOL p.11 | 2027 A1 |
+| C13 | Entry TRL | The body states the entry TRL (usually TRL 1: this proposal is the concept's first definition) and names at least one heritage technology the concept builds on. FAIL when TRL is absent or the entry level is above 2. | MAJOR | SOL p.8 | 2027 A1 |
+| C14 | Phase I objectives | The body gives a very top-level list of at least three Phase I objectives (the major things the study will accomplish), one short line each. FAIL when the list carries a detailed work plan: numbered study steps, pass values, durations or methods (those belong on the overview chart). | MAJOR | SOL p.11 | 2027 A1 |
 | C15 | Comparison with alternatives | The body names at least two alternatives or the state of the art and states one difference from each. | MAJOR | SOL p.9 | 2027 A1 |
-| C16 | No Phase II content | The draft contains no discussion of a later phase and no request for resources for later proposals. | MAJOR | SOL p.7-8 | 2027 A1 |
+| C16 | No Phase II content | The draft contains no Phase II plan, no Phase II work and no request for resources for later proposals. The C12 implementation path (concept to flown system) is allowed and is not later-phase content. | MAJOR | SOL p.7-8 | 2027 A1 |
 | C17 | No other proposals | No sentence refers to a different proposal. | MAJOR | FAQ Q41 | 2027 A1 |
-| C18 | Self-sufficient | The draft contains no URL (http or www) and no sentence that sends the reader to an outside document to follow a claim. | MAJOR | NRA p.13 | 2027 A1 |
-| C19 | Mission assumptions | A sentence or list labeled assumptions names at least two mission-context assumptions. | MAJOR | SOL p.7 | 2027 A1 |
+| C18 | Self-sufficient | The body text, from the first paragraph to the References heading, contains no URL (http or www) and no sentence that sends the reader to an outside document to follow a claim. Reference entries keep their https://doi.org/ DOIs (APA 7). | MAJOR | NRA p.13 | 2027 A1 |
+| C19 | Mission assumptions | One sentence labeled Assumptions names at least two mission-context assumptions (target, orbit, host, environment). Design values and cited constants are not assumptions. | MAJOR | SOL p.7 | 2027 A1 |
 | C20 | No budget or team | The body names no dollar amount for the proposed work and no proposed team member, institution or partner. Quote any hit. | CRITICAL | SOL p.10 | 2027 A1 |
 | C21 | Not previously explored | No sentence admits the concept was studied before without naming the new aspect. | ADVISORY MINOR | blog Prompt 1 | 2027 A1 |
 | C22 | Not incremental | One sentence names an aspect that is not an expected future capability. | ADVISORY MINOR | blog Prompt 1 | 2027 A1 |

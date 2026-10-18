@@ -11,8 +11,8 @@ Replace N with the current step number. Every quantity you write comes from the 
 2. Fill fields 1 to 8 and the six keys TITLE, INNOVATION, IMPACT, MISSION, APPROACH, GRAPHIC_CAPTION. Write each key on its own line as `KEY: text`. Bullets inside a box are lines starting `- `.
 3. Check the rules below against your draft. Fix each miss before you build.
 4. Pick the graphic. Use one file from figures/. If figures/ holds none, build without `--image`, write "hero graphic pending" as an open item, and continue; the chart_images FAIL is that open item.
-5. Run: `python scripts/build_overview_chart.py --brief cr_scratch/stepN_overview_chart_brief.md --template docs/2027_Overview_Chart_Template.docx --image figures/<file> --out cr_scratch/overview_chart.docx`
-6. Run: `python scripts/check_format.py cr_scratch/overview_chart.docx --chart-only`
+5. Run: `python scripts/build_overview_chart.py --brief cr_scratch/stepN_overview_chart_brief.md --template docs/2027_Overview_Chart_Template.docx --image figures/<file> --out proposal/overview_chart.docx`
+6. Run: `python scripts/check_format.py proposal/overview_chart.docx --chart-only`
 7. Read each printed PASS or FAIL line. Copy the list of FAIL lines into your report.
 8. For each FAIL line, edit the brief to fix it, then repeat steps 5 and 6. Make at most 2 reruns. After the second rerun, report any remaining FAIL lines to the user.
 

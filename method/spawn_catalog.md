@@ -25,9 +25,9 @@ Field 10 RULES: R-a to R-h pasted from the template
 
 ## Lit search
 Field 1 AGENT PARAMETER: model: haiku
-Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/lit/search.md"
+Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/lit/search.md" (gap search: "{ROOT}/cr_scratch/lit/search_2.md")
 Field 3 PERSONA: method/personas/fact_checker.md
-Field 4 TASK: Find primary sources for the concept's technical claims per prompts/00c_lit_review.md. Use WebSearch and WebFetch.
+Field 4 TASK: Find primary sources for the concept's technical claims per prompts/00c_lit_review.md. Use WebSearch and WebFetch. Gap search: search only these inputs: {GAP_INPUTS}.
 Field 5 FIXED CONTEXT: the Field 3 file
 Field 6 READ LIST (base {ROOT}/): `prompts/00c_lit_review.md` `cr_scratch/concept_notes.md` (when it exists; else `cr_scratch/intake_answers.md`) `cr_scratch/intake_summary.md`
 Field 7 CHECKLIST: 1) claims 10 or fewer, each 20 words or fewer. 2) sources 16 or fewer; a NIAC prior-art search ran. 3) each citation value seen on an opened page or [REFERENCE NEEDED]. 4) each url is full text or none. 5) no paper summary.
@@ -42,7 +42,7 @@ Field 3 PERSONA: method/personas/fact_checker.md
 Field 4 TASK: Batch {B}. One row per source per prompts/00b_sources.md. Delete unused source paths first.
 Field 5 FIXED CONTEXT: the Field 3 file
 Field 6 READ LIST (base {ROOT}/): `prompts/00b_sources.md` `cr_scratch/lit/{SOURCE_1}` `cr_scratch/lit/{SOURCE_2}` `cr_scratch/lit/{SOURCE_3}` `cr_scratch/lit/{SOURCE_4}`
-Field 7 CHECKLIST: 1) one row per source. 2) each citation value is in its file (grep count). 3) each row has 3 quoted claims. 4) each flag is Y or N. 5) absent values read [REFERENCE NEEDED].
+Field 7 CHECKLIST: 1) one row per source. 2) each citation value is in its file (grep count). 3) each K id on a file's Claims line has 1 to 3 quotes. 4) each flag is Y or N. 5) absent values read [REFERENCE NEEDED].
 Field 8 REQUIRED HEADINGS: ## Files read; ## Digest; ## Open items; ## Checklist
 Field 9 MAX LINES 60, MAX WORDS 700; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
@@ -63,10 +63,10 @@ Field 10 RULES: R-a to R-h pasted from the template
 Field 1 AGENT PARAMETER: model: haiku
 Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_writer_outline.md"
 Field 3 PERSONA: method/personas/writer.md
-Field 4 TASK: Per section: one topic sentence testable true or false, its sources. 3 to 7 figure slots in all.
+Field 4 TASK: Per section: one topic sentence testable true or false, its sources, and the compliance test ids it will pass. 3 to 7 figure slots in all.
 Field 5 FIXED CONTEXT: the Field 3 file, supplements/proposal_arc.md
 Field 6 READ LIST (base {ROOT}/): `prompts/02_outline.md` `cr_scratch/intake_summary.md` `cr_scratch/sources_digest.md` `cr_scratch/step3_software_engineer_tests.md` `cr_scratch/concept_notes.md` (when it exists)
-Field 7 CHECKLIST: 1) one topic sentence per section. 2) each names a number or a named thing. 3) each claim cites a digest id or reads [SOURCE NEEDED]. 4) figure slots 3 to 7. 5) dash count is 0 (grep).
+Field 7 CHECKLIST: 1) one topic sentence per section. 2) each names a number or a named thing. 3) each claim cites a digest id or reads [SOURCE NEEDED]. 4) figure slots 3 to 7. 5) dash count is 0 (grep). 6) every CRITICAL and MAJOR compliance id in the suite has a slot.
 Field 8 REQUIRED HEADINGS: ## Files read; ## Outline; ## Topic sentences; ## Sources; ## Figure slots; ## Checklist
 Field 9 MAX LINES 70, MAX WORDS 700; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
@@ -75,10 +75,10 @@ Field 10 RULES: R-a to R-h pasted from the template
 Field 1 AGENT PARAMETER: model: haiku
 Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_writer_draft.md"
 Field 3 PERSONA: method/personas/writer.md
-Field 4 TASK: Unheaded arc, 1,300 to 1,500 words. Body font {FONT} at 12 pt (Step 3 gate). Cycles 2, 3 (at P6): read {DRAFT} and `cr_scratch/step6_fix_list.md` in place of the outline; edit listed lines only. Propose any missing mission, number or assumption yourself.
+Field 4 TASK: Unheaded arc, 1,300 to 1,500 words. Body font {FONT} at 12 pt (Step 3 gate). Fix pass: read {DRAFT} and `cr_scratch/step6_fix_list.md` in place of the outline; change the listed lines only and copy every other line unchanged, in order. Propose any missing mission, number or assumption yourself.
 Field 5 FIXED CONTEXT: the Field 3 file, supplements/writer_style_subset.md, supplements/mission_context_checklist.md
 Field 6 READ LIST (base {ROOT}/): `prompts/03_draft.md` `cr_scratch/intake_summary.md` `cr_scratch/sources_digest.md` `cr_scratch/step4_writer_outline.md` `cr_scratch/concept_notes.md` (when it exists; else the step 3 test suite file)
-Field 7 CHECKLIST: 1) word count 1300 to 1500. 2) Mission Context in paragraphs 1 and 2. 3) dash count 0. 4) unsourced claims listed under Open items with line numbers; draft markers 0 (grep `SOURCE NEEDED|REFERENCE NEEDED|UNVERIFIED|NOT-READ`). 5) budget terms: 0 (grep). 6) references in APA 7.
+Field 7 CHECKLIST: 1) word count 1300 to 1500. 2) Mission Context in paragraphs 1 and 2. 3) dash count 0. 4) unsourced claims listed under Open items with line numbers; no bracket marker, file name or path in the draft. 5) budget terms: 0 (grep). 6) references in APA 7, cited by author and year. 7) inline "(assumed)" tags: 0 (grep). 8) no numbered study steps in the body.
 Field 8 REQUIRED HEADINGS: ## Files read; ## Draft; ## Open items; ## Checklist
 Field 9 MAX LINES 70, MAX WORDS 1800; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
@@ -150,7 +150,7 @@ Field 3 PERSONA: method/personas/software_engineer.md
 Field 4 TASK: P4 check. For each topic sentence write n | PASS/FAIL | reason. PASS means the sentence is a testable claim against the suite.
 Field 5 FIXED CONTEXT: the Field 3 file
 Field 6 READ LIST (base {ROOT}/): `cr_scratch/step4_writer_outline.md` `cr_scratch/step3_software_engineer_tests.md` `cr_scratch/intake_summary.md`
-Field 7 CHECKLIST: 1) one row per topic sentence. 2) each FAIL names heading, label or untestable claim. 3) each reason quotes 15 words or fewer. 4) no sentence graded by its author.
+Field 7 CHECKLIST: 1) one row per topic sentence. 2) each FAIL names heading, label or untestable claim. 3) each reason quotes 15 words or fewer. 4) no sentence graded by its author. 5) each CRITICAL and MAJOR compliance id has a slot; a missing id is a FAIL row.
 Field 8 REQUIRED HEADINGS: ## Files read; ## Rows; ## Checklist; ## Open items
 Field 9 MAX LINES 50, MAX WORDS 500; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
@@ -159,7 +159,7 @@ Field 10 RULES: R-a to R-h pasted from the template
 Field 1 AGENT PARAMETER: model: haiku
 Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_software_engineer_scoring_compliance.md"
 Field 3 PERSONA: method/personas/software_engineer.md
-Field 4 TASK: Score the compliance tests on the edited draft. BATCH_SIZE {BATCH_SIZE} (seed group 25; suite lists 20 at most). Row: ID | PASS/FAIL | quote of 15 words or fewer or script value.
+Field 4 TASK: Score the compliance tests on {DRAFT}. Word and sentence counts: use the pasted count_words.py output: {COUNT_WORDS}. BATCH_SIZE {BATCH_SIZE} (seed group 25; suite lists 20 at most). Row: ID | PASS/FAIL | quote of 15 words or fewer or script value.
 Field 5 FIXED CONTEXT: the Field 3 file
 Field 6 READ LIST (base {ROOT}/): `tests/seed/compliance.md` `tests/seed/scoring_protocol.md` `cr_scratch/step3_software_engineer_tests.md` `{DRAFT}`
 Field 7 CHECKLIST: 1) row count equals {BATCH_SIZE} (orchestrator compares). 2) mechanical tests quote the script value; none means FAIL. 3) last Scores line is TRUNCATED or the rows are complete.
@@ -171,7 +171,7 @@ Field 10 RULES: R-a to R-h pasted from the template
 Field 1 AGENT PARAMETER: model: haiku
 Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_software_engineer_scoring_sizzle.md"
 Field 3 PERSONA: method/personas/software_engineer.md
-Field 4 TASK: Score the sizzle tests on the edited draft. BATCH_SIZE {BATCH_SIZE} (seed group 24; suite lists 20 at most). Row: ID | PASS/FAIL | quote of 15 words or fewer or script value.
+Field 4 TASK: Score the sizzle tests on {DRAFT}. Word and sentence counts: use the pasted count_words.py output: {COUNT_WORDS}. BATCH_SIZE {BATCH_SIZE} (seed group 24; suite lists 20 at most). Row: ID | PASS/FAIL | quote of 15 words or fewer or script value.
 Field 5 FIXED CONTEXT: the Field 3 file
 Field 6 READ LIST (base {ROOT}/): `tests/seed/sizzle.md` `tests/seed/scoring_protocol.md` `cr_scratch/step3_software_engineer_tests.md` `{DRAFT}`
 Field 7 CHECKLIST: 1) row count equals {BATCH_SIZE} (orchestrator compares). 2) mechanical tests quote the script value; none means FAIL. 3) last Scores line is TRUNCATED or the rows are complete.
@@ -183,7 +183,7 @@ Field 10 RULES: R-a to R-h pasted from the template
 Field 1 AGENT PARAMETER: model: haiku
 Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_software_engineer_scoring_format.md"
 Field 3 PERSONA: method/personas/software_engineer.md
-Field 4 TASK: Score the format tests on the edited draft. BATCH_SIZE {BATCH_SIZE} (seed group 11; suite lists 20 at most). Row: ID | PASS/FAIL | quote of 15 words or fewer or script value.
+Field 4 TASK: Score the format tests on {DRAFT}. BATCH_SIZE {BATCH_SIZE} (seed group 11; suite lists 20 at most). Row: ID | PASS/FAIL | quote of 15 words or fewer or script value.
 Field 5 FIXED CONTEXT: the Field 3 file
 Field 6 READ LIST (base {ROOT}/): `tests/seed/format.md` `tests/seed/scoring_protocol.md` `cr_scratch/step3_software_engineer_tests.md` `{DRAFT}` `cr_scratch/step8_format_check.txt`
 Field 7 CHECKLIST: 1) row count equals {BATCH_SIZE} (orchestrator compares). 2) mechanical tests quote the script value; none means FAIL. 3) last Scores line is TRUNCATED or the rows are complete.
@@ -195,10 +195,22 @@ Field 10 RULES: R-a to R-h pasted from the template
 Field 1 AGENT PARAMETER: model: haiku
 Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_manager_close.md" "{ROOT}/cr_scratch/accumulator.md"
 Field 3 PERSONA: method/personas/manager.md
-Field 4 TASK: Append one accumulator line per persona per cycle. Write the submit check. Verdict: READY or NOT READY.
+Field 4 TASK: P6 close. Append one accumulator line per persona per cycle. Verdict: READY or NOT READY. Marker count: {MARKERS_LINE}. Write no submit check.
 Field 5 FIXED CONTEXT: the Field 3 file
-Field 6 READ LIST (base {ROOT}/): `templates/submit_checklist.md` `cr_scratch/step6_fix_list.md` `cr_scratch/step6_fact_checker_review.md` `cr_scratch/step6_designer_review.md`
-Field 7 CHECKLIST: 1) each submit row has evidence. 2) counts are script values. 3) one accumulator line per persona per cycle. 4) Open items lists FAILs.
+Field 6 READ LIST (base {ROOT}/): `cr_scratch/step6_fix_list.md` `cr_scratch/step6_fact_checker_review.md` `cr_scratch/step6_designer_review.md`
+Field 7 CHECKLIST: 1) no submit check at P6. 2) counts are script values. 3) one accumulator line per persona per cycle. 4) Open items lists FAILs only: no to-get entry, novelty verdict or ruling.
+Field 8 REQUIRED HEADINGS: ## Files read; ## Accumulator entries; ## Verdict; ## Open items; ## Checklist
+Field 9 MAX LINES 80, MAX WORDS 900; TRUNCATED at item n rule
+Field 10 RULES: R-a to R-h pasted from the template
+
+## Manager close P9
+Field 1 AGENT PARAMETER: model: haiku
+Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/step{N}_manager_close.md" "{ROOT}/cr_scratch/accumulator.md"
+Field 3 PERSONA: method/personas/manager.md
+Field 4 TASK: P9 close. Write the submit check from the draft and the format check. Append one accumulator line per persona. Verdict: READY or NOT READY. Marker count: {MARKERS_LINE}.
+Field 5 FIXED CONTEXT: the Field 3 file
+Field 6 READ LIST (base {ROOT}/): `templates/submit_checklist.md` `{DRAFT}` `cr_scratch/step8_format_check.txt` `cr_scratch/step9_systems_engineer_coherence.md`
+Field 7 CHECKLIST: 1) each submit row has a yes or no with a cite (file and line). 2) counts are script values. 3) one accumulator line per persona. 4) Open items lists FAILs only: no to-get entry, novelty verdict or ruling.
 Field 8 REQUIRED HEADINGS: ## Files read; ## Submit check; ## Accumulator entries; ## Verdict; ## Open items; ## Checklist
 Field 9 MAX LINES 80, MAX WORDS 900; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template
@@ -213,4 +225,16 @@ Field 6 READ LIST (base {ROOT}/): `{DRAFT}` `cr_scratch/step7_overview_chart_bri
 Field 7 CHECKLIST: 1) four criteria each have an answering section. 2) repeated figures match the first (grep). 3) each topic sentence is in the draft. 4) each gap has a quote and line number. 5) spawn_count and cycles are within caps.
 Field 8 REQUIRED HEADINGS: ## Files read; ## Coherence; ## Checklist
 Field 9 MAX LINES 60, MAX WORDS 700; TRUNCATED at item n rule
+Field 10 RULES: R-a to R-h pasted from the template
+
+## Recovery planning
+Field 1 AGENT PARAMETER: model: haiku
+Field 2 OUTPUT PATH: "{ROOT}/cr_scratch/recovery_{PERSONA}.md"
+Field 3 PERSONA: method/personas/{PERSONA}.md (manager, software_engineer, fact_checker, designer, systems_engineer, writer)
+Field 4 TASK: The step closed NOT READY. Plan the fix from your role, per templates/recovery_plan.md: blocker, cause, proposed action, owner. Fact-Checker: source gaps as a list of Lit search inputs. Writer: line edits or a restructure.
+Field 5 FIXED CONTEXT: the Field 3 file
+Field 6 READ LIST (base {ROOT}/): `templates/recovery_plan.md` `cr_scratch/step{N}_manager_close.md` `cr_scratch/step6_fix_list.md` `{DRAFT}` `{ROLE_FILE}` (the persona's latest review or score file)
+Field 7 CHECKLIST: 1) at most 10 lines under ## Plan. 2) each line names blocker, cause, action and owner. 3) owner is a roster persona or the orchestrator.
+Field 8 REQUIRED HEADINGS: ## Files read; ## Plan; ## Checklist
+Field 9 MAX LINES 25, MAX WORDS 300; TRUNCATED at item n rule
 Field 10 RULES: R-a to R-h pasted from the template

@@ -44,7 +44,7 @@ Four values in the order Innovation, Impact, Mission, Technical Approach, separa
 | R-c08 | Single representative mission with architecture, science objectives, operations, system-level design, applicability | | |
 | R-c09 | Mission size, weight and power estimate (beneficial, not mandatory) | | |
 | R-c10 | Rudimentary comparison with alternatives and state of the art | | |
-| R-c11 | Entry TRL 2 or lower (TRL 3+ elements not disqualifying) | | |
+| R-c11 | Entry TRL (usually 1: the Step A and Step B proposals are the concept's initial TRL 1 definition; TRL 3+ heritage elements not disqualifying) | | |
 | R-c12 | Mission-context assumptions stated explicitly | | |
 | R-c13 | Significant challenges not deferred to later phases | | |
 | R-c14 | No Phase II content and no Phase II resource request | | |

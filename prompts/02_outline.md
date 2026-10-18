@@ -17,5 +17,7 @@ Each topic sentence names a number or a named thing. [CHANGED: makes each senten
 Cite each claim with an id from cr_scratch/sources_digest.md. [CHANGED: sources come from the digest file]
 A claim with no digest id reads [SOURCE NEEDED]. [CHANGED: unsourced claim rule]
 Add 3 to 7 figure slots in all. [CHANGED: figure count rule]
+Give every CRITICAL and MAJOR compliance test in the suite a slot: write its id beside the topic sentence that will pass it (C03 barrier, C12 path, C14 objectives, C19 assumptions and the rest). [CHANGED: required elements are planned, not found at scoring]
+Plan no work plan paragraph: the Phase I objectives are one short list, and study steps go on the overview chart. [CHANGED: author rule, Step A carries no detailed work plan]
 The Mission topic sentence names the wholly new capability that no existing or previously explored mission has. [CHANGED: author rule for the Mission section]
 Write the outline to cr_scratch/step{N}_writer_outline.md. [CHANGED: output is a file in cr_scratch named by the catalog]

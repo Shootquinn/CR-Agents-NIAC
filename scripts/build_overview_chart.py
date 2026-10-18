@@ -65,6 +65,7 @@ an image is added). Standard library, python-docx and lxml only.
 """
 import argparse
 import copy
+import os
 import re
 import sys
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows cp1252 consoles
@@ -518,6 +519,7 @@ def build(brief, template, image, out):
         clear_graphic_fill(root)
         extra[media] = blob
 
+    os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zout:
         for info in zin.infolist():
             data = zin.read(info.filename)

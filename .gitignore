@@ -1,6 +1,7 @@
 # user work products (never commit a proposal in progress)
 /cr_scratch/
 /figures/
+/proposal/
 sources/*
 !sources/.gitkeep
 /gameplan.md
