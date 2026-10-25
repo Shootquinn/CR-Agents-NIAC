@@ -1,6 +1,6 @@
 # Opus figure rule
 
-Haiku limitation: Haiku cannot reliably read figure values (bar heights, points against an axis, small print in a chart image). The default is OFF. Any figure value the product cannot read is marked NOT-READ, and the claim that depends on it is marked [FIGURE UNVERIFIED]. This file is the only product file allowed to name a model other than haiku.
+Haiku limitation: Haiku cannot reliably read figure values (bar heights, points against an axis, small print in a chart image). The default is OFF. Any figure value the product cannot read is marked NOT-READ, and the claim that depends on it is marked [FIGURE UNVERIFIED]. This file and the prompts in `supplements/source_summaries/` (user-side chat tools, never spawned by the run) are the only product files allowed to name a model other than haiku.
 
 ## Triggers
 

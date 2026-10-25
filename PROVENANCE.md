@@ -19,5 +19,8 @@ Legal repo: https://github.com/Shootquinn/CR-Agents-Legal at 6737e64 (beta)
 | niac-repo/method/personas/fact_checker.md | CR-Agents | method/operational_guide.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
 | niac-repo/supplements/writer_style_subset.md | CR-Agents | supplements/writing-guides/style.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
 | niac-repo/supplements/editor_grep_list.md | CR-Agents | supplements/signs_of_ai_writing.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
+| niac-repo/supplements/source_summaries/md-summary-chat-prompt.md | CR-Agents | supplements/source_summaries/md-summary-chat-prompt.md | 2b6955b9c6d3471c27429d2c9ea7fc1d17e0b238 | 2026-10-25 | verbatim |
+| niac-repo/supplements/source_summaries/md-book-summary-chat-prompt.md | CR-Agents | supplements/source_summaries/md-book-summary-chat-prompt.md | 2b6955b9c6d3471c27429d2c9ea7fc1d17e0b238 | 2026-10-25 | verbatim |
+| niac-repo/supplements/performative-epistemics.md | CR-Agents | supplements/performative-epistemics.md | 2b6955b9c6d3471c27429d2c9ea7fc1d17e0b238 | 2026-10-25 | verbatim |
 
 Legal repo files pulled: none.
