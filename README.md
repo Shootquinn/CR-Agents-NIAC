@@ -49,7 +49,7 @@ A file called prompt0 is included to help orient Claude with what you have insta
 3. `prompts/`: intake, sources, orientation and the three method prompts.
 4. `scripts/`: format and tool checks, the editor grep, the chart and docx builders, PDF assembly.
 5. `skills/`: the overview chart skill.
-6. `supplements/`: the proposal arc, NIAC advice, mission checklist, figure guidance, style subset, grep list, the epistemics note and the two source-summary prompts for the user's own chat use.
+6. `supplements/`: the proposal arc, NIAC advice, mission checklist, figure guidance, style subset, grep list and the two source-summary prompts for the user's own chat use.
 7. `templates/`: the intake summary, briefs, logs, accumulator and the proposal template docx.
 8. `tests/seed/`: the 60 seed tests, scoring protocol and rubric.
 9. `docs/`: the 2027 solicitation, FAQ and parent NRA in markdown, the chart template, three example proposals.

@@ -21,6 +21,5 @@ Legal repo: https://github.com/Shootquinn/CR-Agents-Legal at 6737e64 (beta)
 | niac-repo/supplements/editor_grep_list.md | CR-Agents | supplements/signs_of_ai_writing.md | 1fcc1a7efe3df180ac85aad5d802a84ad683d633 | 2026-10-16 | derived |
 | niac-repo/supplements/source_summaries/md-summary-chat-prompt.md | CR-Agents | supplements/source_summaries/md-summary-chat-prompt.md | 47bf822a3125c9008fb6509d060684dae03ab6f7 | 2026-10-25 | verbatim |
 | niac-repo/supplements/source_summaries/md-book-summary-chat-prompt.md | CR-Agents | supplements/source_summaries/md-book-summary-chat-prompt.md | 47bf822a3125c9008fb6509d060684dae03ab6f7 | 2026-10-25 | verbatim |
-| niac-repo/supplements/performative-epistemics.md | CR-Agents | supplements/performative-epistemics.md | 47bf822a3125c9008fb6509d060684dae03ab6f7 | 2026-10-25 | verbatim |
 
 Legal repo files pulled: none.
